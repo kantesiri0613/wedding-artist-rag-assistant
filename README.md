@@ -1,3 +1,6 @@
+# wedding-artist-rag-assistant
+RAG-based AI assistant for a live wedding painting business using document retrieval and context-aware responses.
+
 # Live Paintings by Harshita
 
 A multi-page website for a live wedding and event painting studio. Visitors can explore the studio, estimate painting prices, submit booking details, and ask the studio assistant questions.
