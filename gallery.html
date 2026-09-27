@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Live Paintings by Harshita</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: Outfit, sans-serif; background: #070A12; color: #f8fafc; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .gold { color: #E5C158; }
+        .panel { background: rgba(12, 19, 34, 0.82); border: 1px solid rgba(212, 175, 55, 0.25); backdrop-filter: blur(14px); }
+        .work { transition: all 0.3s ease; }
+        .work.hide { display: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+    <header class="sticky top-0 z-50 panel">
+        <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html#home" class="serif text-xl sm:text-2xl font-bold flex items-center gap-3">
+                <span class="w-9 h-9 rounded-full bg-yellow-500 text-dark-950 flex items-center justify-center font-bold text-lg">H</span>
+                Live Paintings by <span class="gold">Harshita</span>
+            </a>
+            <div class="hidden md:flex gap-6 text-sm font-semibold">
+                <a href="index.html#home" class="hover:text-yellow-400">Home</a>
+                <a href="about.html" class="hover:text-yellow-400">About</a>
+                <a href="gallery.html" class="gold border-b-2 border-yellow-500 pb-2">Gallery</a>
+                <a href="index.html#videos" class="hover:text-yellow-400">Videos & Reels</a>
+                <a href="process.html" class="hover:text-yellow-400">How It Works</a>
+                <a href="estimator.html" class="hover:text-yellow-400">Estimator</a>
+                <a href="reviews.html" class="hover:text-yellow-400">Reviews</a>
+                <a href="faq.html" class="hover:text-yellow-400">FAQ</a>
+            </div>
+            <a href="index.html#estimator" class="px-5 py-2.5 rounded-full bg-yellow-500 text-slate-950 font-bold text-xs uppercase tracking-wider">Book Harshita</a>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-20 flex-grow">
+        <div class="text-center mb-12">
+            <p class="gold uppercase tracking-[.25em] text-xs font-bold">Exhibition Portfolio</p>
+            <h1 class="serif text-4xl md:text-6xl font-bold mt-3">Live Art Masterpieces</h1>
+            <p class="text-slate-400 mt-3 text-sm">Real live paintings painted by Harshita from recent weddings, engagements, and celebrations.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+            <button data-filter="all" class="filter-btn px-5 py-2 rounded-full bg-yellow-500 text-slate-950 font-bold text-xs uppercase tracking-wider">All Works</button>
+            <button data-filter="wedding" class="filter-btn px-5 py-2 rounded-full panel text-xs uppercase tracking-wider text-slate-300">Weddings & Varmala</button>
+            <button data-filter="engagement" class="filter-btn px-5 py-2 rounded-full panel text-xs uppercase tracking-wider text-slate-300">Engagement Ceremonies</button>
+            <button data-filter="sketches" class="filter-btn px-5 py-2 rounded-full panel text-xs uppercase tracking-wider text-slate-300">Guest Sketches</button>
+            <button data-filter="corporate" class="filter-btn px-5 py-2 rounded-full panel text-xs uppercase tracking-wider text-slate-300">Corporate Galas</button>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article data-category="wedding" class="work panel rounded-2xl overflow-hidden group">
+                <div class="aspect-[4/3] overflow-hidden relative">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="assets/images/wedding_paint.jpeg" alt="Wedding painting">
+                </div>
+                <div class="p-5">
+                    <span class="gold text-xs uppercase font-bold">Wedding Artwork</span>
+                    <h2 class="serif text-xl font-bold text-white mt-1">Wedding Painting</h2>
+                    <p class="text-xs text-slate-400 mt-1">Artsy heirloom composition</p>
+                </div>
+            </article>
+
+            <article data-category="engagement" class="work panel rounded-2xl overflow-hidden group">
+                <div class="aspect-[4/3] overflow-hidden relative">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="assets/images/Haldi_art.jpeg" alt="Haldi artwork">
+                </div>
+                <div class="p-5">
+                    <span class="gold text-xs uppercase font-bold">Haldi Art</span>
+                    <h2 class="serif text-xl font-bold text-white mt-1">Haldi Celebration</h2>
+                    <p class="text-xs text-slate-400 mt-1">Decorative cultural artwork</p>
+                </div>
+            </article>
+
+            <article data-category="sketches" class="work panel rounded-2xl overflow-hidden group">
+                <div class="aspect-[4/3] overflow-hidden relative">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="assets/images/haldi_art2at%2011.33.31%20AM.jpeg" alt="Haldi artwork detail">
+                </div>
+                <div class="p-5">
+                    <span class="text-emerald-400 text-xs uppercase font-bold">Detail</span>
+                    <h2 class="serif text-xl font-bold text-white mt-1">Haldi Artwork Detail</h2>
+                    <p class="text-xs text-slate-400 mt-1">Close-up celebration moment</p>
+                </div>
+            </article>
+
+            <article data-category="wedding" class="work panel rounded-2xl overflow-hidden group">
+                <div class="aspect-[4/3] overflow-hidden relative">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="assets/images/ART.jpeg" alt="Artist portrait">
+                </div>
+                <div class="p-5">
+                    <span class="gold text-xs uppercase font-bold">Featured</span>
+                    <h2 class="serif text-xl font-bold text-white mt-1">Harshita Signature</h2>
+                    <p class="text-xs text-slate-400 mt-1">Artist portrait and signature style</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="mt-16 text-center">
+            <a href="index.html#estimator" class="px-8 py-4 rounded-full bg-yellow-500 text-slate-950 font-bold text-xs uppercase tracking-wider">Book Harshita for Your Wedding</a>
+        </div>
+    </main>
+
+    <footer class="panel border-t border-slate-800 text-slate-400 py-8 text-xs text-center">
+        <p>&copy; 2026 Live Paintings by Harshita. @livepaintingsbyharshita</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.work').forEach(work => {
+                    work.classList.toggle('hide', filter !== 'all' && work.dataset.category !== filter);
+                });
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-yellow-500', 'text-slate-950');
+                    b.classList.add('panel', 'text-slate-300');
+                });
+                btn.classList.remove('panel', 'text-slate-300');
+                btn.classList.add('bg-yellow-500', 'text-slate-950');
+            });
+        });
+    </script>
+    <script src="chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews | Live Paintings by Harshita</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: Outfit, sans-serif; background: #070A12; color: #f8fafc; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .gold { color: #E5C158; }
+        .panel { background: rgba(12, 19, 34, 0.82); border: 1px solid rgba(212, 175, 55, 0.25); backdrop-filter: blur(14px); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+    <header class="sticky top-0 z-50 panel">
+        <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html#home" class="serif text-xl sm:text-2xl font-bold flex items-center gap-3">
+                <span class="w-9 h-9 rounded-full bg-yellow-500 text-dark-950 flex items-center justify-center font-bold text-lg">H</span>
+                Live Paintings by <span class="gold">Harshita</span>
+            </a>
+            <div class="hidden md:flex gap-6 text-sm font-semibold">
+                <a href="index.html#home" class="hover:text-yellow-400">Home</a>
+                <a href="about.html" class="hover:text-yellow-400">About</a>
+                <a href="gallery.html" class="hover:text-yellow-400">Gallery</a>
+                <a href="index.html#videos" class="hover:text-yellow-400">Videos & Reels</a>
+                <a href="process.html" class="hover:text-yellow-400">How It Works</a>
+                <a href="estimator.html" class="hover:text-yellow-400">Estimator</a>
+                <a href="reviews.html" class="gold border-b-2 border-yellow-500 pb-2">Reviews</a>
+                <a href="faq.html" class="hover:text-yellow-400">FAQ</a>
+            </div>
+            <a href="index.html#estimator" class="px-5 py-2.5 rounded-full bg-yellow-500 text-slate-950 font-bold text-xs uppercase tracking-wider">Book Harshita</a>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-20 flex-grow">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <p class="gold uppercase tracking-[.25em] text-xs font-bold">Love Letters & Words of Praise</p>
+            <h1 class="serif text-4xl md:text-6xl font-bold mt-3">Client Testimonials</h1>
+            <p class="text-slate-400 mt-2 text-sm">Hear directly from couples and event organizers who booked Harshita.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-7">
+            <article class="panel rounded-2xl p-7 flex flex-col justify-between">
+                <div>
+                    <div class="gold text-lg">★★★★★</div>
+                    <p class="text-slate-300 italic text-xs leading-relaxed mt-4">"Having Harshita paint our Varmala live at the palace in Udaipur was the highlight of our wedding! Our guests were crowded around her easel watching the gold leaf and flowers come alive."</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-800">
+                    <h2 class="font-bold text-white text-xs">Pooja & Rohan S.</h2>
+                    <p class="text-[10px] text-slate-400 mt-1">Taj Lake Palace, Udaipur &bull; 30x40 Canvas</p>
+                </div>
+            </article>
+
+            <article class="panel rounded-2xl p-7 flex flex-col justify-between">
+                <div>
+                    <div class="gold text-lg">★★★★★</div>
+                    <p class="text-slate-300 italic text-xs leading-relaxed mt-4">"Harshita captured our ballroom first dance in Delhi so gorgeously! The painting is now the centerpiece of our living room. Her attention to bridal lehenga detail and lighting is unbelievable."</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-800">
+                    <h2 class="font-bold text-white text-xs">Ananya & Siddharth K.</h2>
+                    <p class="text-[10px] text-slate-400 mt-1">The Leela Palace, New Delhi &bull; 24x36 Canvas</p>
+                </div>
+            </article>
+
+            <article class="panel rounded-2xl p-7 flex flex-col justify-between">
+                <div>
+                    <div class="gold text-lg">★★★★★</div>
+                    <p class="text-slate-300 italic text-xs leading-relaxed mt-4">"The live guest watercolor sketches at our beachside Goa reception were a massive sensation! Every single guest went home with a framed portrait keepsake. Best decision ever!"</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-800">
+                    <h2 class="font-bold text-white text-xs">Meera & Karan D.</h2>
+                    <p class="text-[10px] text-slate-400 mt-1">W Goa Beach Resort &bull; Live Guest Vignettes</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="mt-16 text-center">
+            <a href="index.html#estimator" class="px-8 py-4 rounded-full bg-yellow-500 text-slate-950 font-bold text-xs uppercase tracking-wider">Book Harshita for Your Wedding</a>
+        </div>
+    </main>
+
+    <footer class="panel border-t border-slate-800 text-slate-400 py-8 text-xs text-center">
+        <p>&copy; 2026 Live Paintings by Harshita. @livepaintingsbyharshita</p>
+    </footer>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders | Live Paintings by Harshita</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { 300:'#F5E19A', 400:'#E5C158', 500:'#D4AF37', 600:'#B89028', 700:'#916E18' },
+                        dark: { 800:'#151E2E', 900:'#0C1322', 950:'#070A12' }
+                    },
+                    fontFamily: {
+                        serif:['Playfair Display','serif'],
+                        sans:['Outfit','sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background: #070A12; color: #f8fafc; }
+        .glass { background: rgba(12, 19, 34, 0.82); border: 1px solid rgba(212,175,55,0.22); backdrop-filter: blur(12px); }
+        .gold { color: #E5C158; }
+    </style>
+</head>
+<body class="font-sans min-h-screen">
+    <header class="border-b border-gold-500/20 bg-dark-900/80 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-gold-700 via-gold-500 to-gold-300 flex items-center justify-center text-dark-950 font-serif font-extrabold text-2xl">H</div>
+                <div>
+                    <span class="font-serif text-xl font-bold text-white">Live Paintings by <span class="gold">Harshita</span></span>
+                </div>
+            </a>
+            <a href="index.html" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-gold-500 to-amber-600 text-dark-950 font-bold text-xs uppercase tracking-wider">Back to Home</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="mb-8">
+            <p class="text-gold-400 text-xs uppercase tracking-[0.25em] font-bold">Bookings Dashboard</p>
+            <h1 class="font-serif text-4xl md:text-5xl font-bold mt-3">Orders</h1>
+            <p id="orders-subtitle" class="text-slate-400 mt-2">Please log in to view your orders or admin bookings.</p>
+        </div>
+
+        <div id="auth-box" class="glass rounded-3xl p-6 mb-6">
+            <div class="flex flex-wrap gap-3 mb-6">
+                <button type="button" id="tab-customer" class="tab-button px-4 py-2 rounded-full bg-gold-500 text-dark-950 font-bold text-xs uppercase tracking-wider">Customer Login</button>
+                <button type="button" id="tab-admin" class="tab-button px-4 py-2 rounded-full bg-dark-800 text-slate-300 border border-slate-700 text-xs uppercase tracking-wider">Admin Login</button>
+            </div>
+
+            <div id="customer-auth" class="auth-panel">
+                <form id="customer-login-form" class="space-y-4">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2">Phone or Email</label>
+                        <input id="customer-identifier" type="text" placeholder="Enter mobile or email" class="w-full px-4 py-3 rounded-xl bg-dark-900 border border-slate-700 text-white focus:outline-none focus:border-gold-500" required>
+                    </div>
+                    <div class="flex gap-3">
+                        <button type="button" id="request-otp" class="flex-1 px-5 py-3 rounded-full bg-gradient-to-r from-gold-500 to-amber-600 text-dark-950 font-bold text-xs uppercase tracking-wider">Request OTP</button>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2">OTP</label>
+                        <input id="customer-otp" type="text" placeholder="Enter OTP (demo: 123456)" class="w-full px-4 py-3 rounded-xl bg-dark-900 border border-slate-700 text-white focus:outline-none focus:border-gold-500">
+                    </div>
+                    <button type="submit" class="w-full px-5 py-3 rounded-full bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider">Login with OTP</button>
+                </form>
+            </div>
+
+            <div id="admin-auth" class="auth-panel hidden">
+                <form id="admin-login-form" class="space-y-4">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2">Admin Password</label>
+                        <input id="admin-password" type="password" placeholder="Enter admin password" class="w-full px-4 py-3 rounded-xl bg-dark-900 border border-slate-700 text-white focus:outline-none focus:border-gold-500" required>
+                    </div>
+                    <button type="submit" class="w-full px-5 py-3 rounded-full bg-gradient-to-r from-gold-500 to-amber-600 text-dark-950 font-bold text-xs uppercase tracking-wider">Admin Login</button>
+                </form>
+            </div>
+
+            <p id="auth-message" class="mt-4 text-sm text-slate-300 hidden"></p>
+        </div>
+
+        <div id="orders-empty" class="glass rounded-3xl p-8 text-center hidden">
+            <i class="fa-solid fa-box-open text-3xl text-gold-400 mb-4"></i>
+            <h2 class="font-serif text-2xl font-bold text-white mb-2">No bookings found</h2>
+            <p class="text-slate-400">No matching orders are currently available for this login.</p>
+        </div>
+
+        <div id="orders-list" class="space-y-4"></div>
+    </main>
+
+    <script>
+        const API_BASE = 'http://127.0.0.1:8001';
+        const STORAGE_KEY = 'harshita_session_token';
+        const USER_ROLE_KEY = 'harshita_session_role';
+        let activeMode = 'customer';
+
+        function showMessage(text, isError = false) {
+            const el = document.getElementById('auth-message');
+            el.textContent = text;
+            el.classList.remove('hidden');
+            el.classList.remove('text-emerald-400', 'text-red-400');
+            el.classList.add(isError ? 'text-red-400' : 'text-emerald-400');
+        }
+
+        function getToken() {
+            return localStorage.getItem(STORAGE_KEY) || '';
+        }
+
+        function setToken(token, role) {
+            localStorage.setItem(STORAGE_KEY, token);
+            localStorage.setItem(USER_ROLE_KEY, role);
+        }
+
+        function clearSession() {
+            localStorage.removeItem(STORAGE_KEY);
+            localStorage.removeItem(USER_ROLE_KEY);
+        }
+
+        function getRole() {
+            return localStorage.getItem(USER_ROLE_KEY) || '';
+        }
+
+        function clearBookings(message) {
+            document.getElementById('orders-list').innerHTML = '';
+            document.getElementById('orders-empty').classList.add('hidden');
+            document.getElementById('orders-subtitle').textContent = message;
+        }
+
+        async function fetchBookings() {
+            const token = getToken();
+            const role = getRole();
+
+            if (role !== activeMode) {
+                clearBookings(activeMode === 'customer'
+                    ? 'Enter your phone number or email and log in to see your bookings.'
+                    : 'Please log in as admin to view all bookings.');
+                return;
+            }
+
+            if (!token) {
+                clearBookings(activeMode === 'customer'
+                    ? 'Enter your phone number or email and log in to see your bookings.'
+                    : 'Please log in as admin to view all bookings.');
+                return;
+            }
+
+            const response = await fetch(`${API_BASE}/api/bookings`, {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+
+            const data = await response.json();
+            if (!response.ok) {
+                clearSession();
+                showMessage(data.detail || 'Session expired. Please log in again.', true);
+                return;
+            }
+
+            if (role !== activeMode || role !== getRole()) {
+                return;
+            }
+
+            const bookings = Array.isArray(data.bookings) ? data.bookings : [];
+            renderBookings(bookings, role === 'customer');
+        }
+
+        function renderBookings(bookings, isCustomerView) {
+            const list = document.getElementById('orders-list');
+            const empty = document.getElementById('orders-empty');
+            const subtitle = document.getElementById('orders-subtitle');
+
+            subtitle.textContent = isCustomerView ? 'Customer view: showing only your booking records.' : 'Admin view: showing all bookings across all customers.';
+
+            if (!bookings.length) {
+                empty.classList.remove('hidden');
+                list.innerHTML = '';
+                return;
+            }
+
+            empty.classList.add('hidden');
+            list.innerHTML = bookings.map((item, index) => {
+                const refCode = item.refCode || `#HARSHITA-${index + 1}`;
+                const customer = item.name || 'Customer';
+                const phone = item.phone || 'N/A';
+                const email = item.email || 'N/A';
+                const date = item.date || 'Not specified';
+                const venue = item.venue || 'Not specified';
+                const city = item.city || 'Not specified';
+                const canvas = item.canvasName || 'Not specified';
+                const moment = item.moment || 'Not specified';
+                const addons = Array.isArray(item.addonsList) && item.addonsList.length ? item.addonsList.join(', ') : 'None';
+                const total = item.total ? item.total.toLocaleString() : '0';
+                const deposit = item.deposit ? item.deposit.toLocaleString() : '0';
+
+                return `
+                    <article class="glass rounded-3xl p-5 sm:p-6">
+                        <div class="flex flex-col md:flex-row md:justify-between gap-3 border-b border-slate-800 pb-4 mb-4">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.22em] text-gold-400">${(item.eventType || 'BOOKING').toUpperCase()}</p>
+                                <h2 class="font-serif text-2xl text-white mt-1">${customer}</h2>
+                            </div>
+                            <div class="text-left md:text-right">
+                                <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400">Reference</p>
+                                <strong class="text-gold-400 font-mono">${refCode}</strong>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-sm">
+                            <div><span class="text-[10px] uppercase tracking-[0.18em] text-slate-400 block">Phone</span><span class="text-white">${phone}</span></div>
+                            <div><span class="text-[10px] uppercase tracking-[0.18em] text-slate-400 block">Email</span><span class="text-white break-all">${email}</span></div>
+                            <div><span class="text-[10px] uppercase tracking-[0.18em] text-slate-400 block">Event Date</span><span class="text-white">${date}</span></div>
+                            <div><span class="text-[10px] uppercase tracking-[0.18em] text-slate-400 block">Venue</span><span class="text-white">${venue}</span></div>
+                            <div><span class="text-[10px] uppercase tracking-[0.18em] text-slate-400 block">City</span><span class="text-white">${city}</span></div>
+                        </div>
+
+                        <div class="mt-5 grid grid-cols-1 lg:grid-cols-3 gap-4 text-sm">
+                            <div><span class="text-[10px] uppercase tracking-[0.18em] text-slate-400 block">Canvas</span><span class="text-white">${canvas}" Fine Art Canvas</span></div>
+                            <div><span class="text-[10px] uppercase tracking-[0.18em] text-slate-400 block">Moment</span><span class="text-white">${moment}</span></div>
+                            <div><span class="text-[10px] uppercase tracking-[0.18em] text-slate-400 block">Add-ons</span><span class="text-white">${addons}</span></div>
+                        </div>
+
+                        <div class="mt-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-t border-slate-800 pt-4 text-sm">
+                            <div><span class="text-slate-400">Total:</span> <strong class="text-gold-400 ml-2">₹${total}</strong></div>
+                            <div><span class="text-slate-400">Advance:</span> <strong class="text-emerald-400 ml-2">₹${deposit}</strong></div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-[11px] uppercase font-bold">Confirmed</span>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        function setActiveTab(mode) {
+            activeMode = mode;
+            document.getElementById('customer-auth').classList.toggle('hidden', mode !== 'customer');
+            document.getElementById('admin-auth').classList.toggle('hidden', mode !== 'admin');
+            document.getElementById('tab-customer').className = mode === 'customer'
+                ? 'tab-button px-4 py-2 rounded-full bg-gold-500 text-dark-950 font-bold text-xs uppercase tracking-wider'
+                : 'tab-button px-4 py-2 rounded-full bg-dark-800 text-slate-300 border border-slate-700 text-xs uppercase tracking-wider';
+            document.getElementById('tab-admin').className = mode === 'admin'
+                ? 'tab-button px-4 py-2 rounded-full bg-gold-500 text-dark-950 font-bold text-xs uppercase tracking-wider'
+                : 'tab-button px-4 py-2 rounded-full bg-dark-800 text-slate-300 border border-slate-700 text-xs uppercase tracking-wider';
+
+            if (mode === 'admin' && getRole() === 'admin' && getToken()) {
+                fetchBookings();
+            } else {
+                clearBookings(mode === 'customer'
+                    ? 'Enter your phone number or email and log in to see your bookings.'
+                    : 'Please log in as admin to view all bookings.');
+            }
+        }
+
+        document.getElementById('tab-customer').addEventListener('click', () => setActiveTab('customer'));
+        document.getElementById('tab-admin').addEventListener('click', () => setActiveTab('admin'));
+
+        document.getElementById('request-otp').addEventListener('click', async () => {
+            const identifier = document.getElementById('customer-identifier').value.trim();
+            if (!identifier) {
+                showMessage('Please enter your phone number or email first.', true);
+                return;
+            }
+
+            const response = await fetch(`${API_BASE}/api/auth/request-otp`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ identifier })
+            });
+
+            const data = await response.json();
+            if (!response.ok) {
+                showMessage(data.detail || 'Unable to send OTP.', true);
+                return;
+            }
+
+            showMessage(`OTP sent. Demo OTP: ${data.demo_otp}`);
+        });
+
+        document.getElementById('customer-login-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const identifier = document.getElementById('customer-identifier').value.trim();
+            const otp = document.getElementById('customer-otp').value.trim();
+
+            const response = await fetch(`${API_BASE}/api/auth/verify-otp`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ identifier, otp })
+            });
+
+            const data = await response.json();
+            if (!response.ok) {
+                showMessage(data.detail || 'OTP verification failed.', true);
+                return;
+            }
+
+            setToken(data.token, data.role);
+            showMessage('Customer logged in successfully.');
+            fetchBookings();
+        });
+
+        document.getElementById('admin-login-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const password = document.getElementById('admin-password').value;
+
+            const response = await fetch(`${API_BASE}/api/admin/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ password })
+            });
+
+            const data = await response.json();
+            if (!response.ok) {
+                showMessage(data.detail || 'Admin login failed.', true);
+                return;
+            }
+
+            setToken(data.token, data.role);
+            showMessage('Admin logged in successfully.');
+            fetchBookings();
+        });
+
+        setActiveTab('customer');
+    </script>
+</body>
+</html>

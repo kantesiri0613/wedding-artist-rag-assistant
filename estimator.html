@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Estimator | Live Paintings by Harshita</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: Outfit, sans-serif; background: #070A12; color: #f8fafc; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .gold { color: #E5C158; }
+        .panel { background: rgba(12, 19, 34, 0.82); border: 1px solid rgba(212, 175, 55, 0.25); backdrop-filter: blur(14px); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+    <header class="sticky top-0 z-50 panel">
+        <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html#home" class="serif text-xl sm:text-2xl font-bold flex items-center gap-3">
+                <span class="w-9 h-9 rounded-full bg-yellow-500 text-dark-950 flex items-center justify-center font-bold text-lg">H</span>
+                Live Paintings by <span class="gold">Harshita</span>
+            </a>
+            <div class="hidden md:flex gap-6 text-sm font-semibold">
+                <a href="index.html#home" class="hover:text-yellow-400">Home</a>
+                <a href="about.html" class="hover:text-yellow-400">About</a>
+                <a href="gallery.html" class="hover:text-yellow-400">Gallery</a>
+                <a href="index.html#videos" class="hover:text-yellow-400">Videos & Reels</a>
+                <a href="process.html" class="hover:text-yellow-400">How It Works</a>
+                <a href="estimator.html" class="gold border-b-2 border-yellow-500 pb-2">Estimator</a>
+                <a href="reviews.html" class="hover:text-yellow-400">Reviews</a>
+                <a href="faq.html" class="hover:text-yellow-400">FAQ</a>
+            </div>
+            <a href="index.html#estimator" class="px-5 py-2.5 rounded-full bg-yellow-500 text-slate-950 font-bold text-xs uppercase tracking-wider">Book Harshita</a>
+        </nav>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-20 flex-grow">
+        <div class="text-center mb-12">
+            <p class="gold uppercase tracking-[.25em] text-xs font-bold">Instant Calculator</p>
+            <h1 class="serif text-4xl md:text-6xl font-bold mt-3">Live Painting Price Estimator</h1>
+            <p class="text-slate-400 mt-2 text-sm">Calculate your personalized package for live wedding and event art by Harshita.</p>
+        </div>
+
+        <section class="panel rounded-3xl p-7 md:p-10 space-y-8">
+            <div>
+                <h2 class="gold text-xs uppercase font-bold mb-3">Event Category</h2>
+                <select id="category" class="w-full p-4 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white">
+                    <option value="1">Wedding Ceremony & Varmala</option>
+                    <option value="1">Engagement / Ring Ceremony</option>
+                    <option value="1">Haldi & Sangeet Night</option>
+                    <option value="1.15">Corporate Gala & Keynote</option>
+                    <option value=".95">Anniversary / Milestone</option>
+                </select>
+            </div>
+
+            <div>
+                <h2 class="gold text-xs uppercase font-bold mb-3">Canvas Dimensions</h2>
+                <select id="canvas" class="w-full p-4 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white">
+                    <option value="25000">18" x 24" Intimate Canvas - ₹25,000</option>
+                    <option value="45000" selected>24" x 36" Classic Standard Canvas (Most Popular) - ₹45,000</option>
+                    <option value="65000">30" x 40" Grand Luxury Canvas - ₹65,000</option>
+                    <option value="90000">36" x 48" Masterpiece Statement Canvas - ₹90,000</option>
+                </select>
+            </div>
+
+            <div>
+                <h2 class="gold text-xs uppercase font-bold mb-3">Luxury Customizations & Add-ons</h2>
+                <div class="grid sm:grid-cols-2 gap-3 text-xs">
+                    <label class="panel rounded-xl p-4 flex items-center justify-between cursor-pointer">
+                        <span><input class="addon mr-2" type="checkbox" value="5000"> Studio UV Varnish & Detailing</span>
+                        <strong class="gold">+₹5,000</strong>
+                    </label>
+                    <label class="panel rounded-xl p-4 flex items-center justify-between cursor-pointer">
+                        <span><input class="addon mr-2" type="checkbox" value="4000"> 24K Genuine Gold Leaf Accents</span>
+                        <strong class="gold">+₹4,000</strong>
+                    </label>
+                    <label class="panel rounded-xl p-4 flex items-center justify-between cursor-pointer">
+                        <span><input class="addon mr-2" type="checkbox" value="6000"> Extra Recognizable Family Faces</span>
+                        <strong class="gold">+₹6,000</strong>
+                    </label>
+                    <label class="panel rounded-xl p-4 flex items-center justify-between cursor-pointer">
+                        <span><input class="addon mr-2" type="checkbox" value="7500"> Custom Handcrafted Teakwood Framing</span>
+                        <strong class="gold">+₹7,500</strong>
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="gold text-xs uppercase font-bold mb-3">Travel Distance from Studio: <span id="km-text">0</span> km</h2>
+                <input id="travel" type="range" min="0" max="300" step="10" value="0" class="w-full accent-yellow-500">
+                <p class="text-[11px] text-slate-400 mt-1">First 50 km free. ₹30 per km for ground travel afterwards.</p>
+            </div>
+
+            <div class="border-t border-slate-700 pt-6 flex flex-col sm:flex-row justify-between gap-5 items-center">
+                <div>
+                    <p class="text-xs uppercase text-slate-400">Estimated Total Investment</p>
+                    <strong id="total" class="serif text-4xl gold">₹45,000</strong>
+                    <p id="breakdown" class="text-xs text-slate-400 mt-2"></p>
+                    <p class="text-xs gold mt-1">30% Advance Deposit to Lock Date: <strong id="deposit">₹13,500</strong></p>
+                </div>
+                <a href="index.html#estimator" class="px-8 py-4 rounded-full bg-yellow-500 text-slate-950 font-bold text-xs uppercase tracking-wider">Book This Package</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="panel border-t border-slate-800 text-slate-400 py-8 text-xs text-center">
+        <p>&copy; 2026 Live Paintings by Harshita. @livepaintingsbyharshita</p>
+    </footer>
+
+    <script>
+        const category = document.getElementById('category');
+        const canvas = document.getElementById('canvas');
+        const travel = document.getElementById('travel');
+
+        function calculate() {
+            const base = Number(canvas.value);
+            const multiplier = Number(category.value);
+            const km = Number(travel.value);
+            const addons = [...document.querySelectorAll('.addon:checked')].reduce((sum, item) => sum + Number(item.value), 0);
+            const travelFee = Math.max(0, km - 50) * 30;
+            const total = Math.round(base * multiplier + addons + travelFee);
+            const deposit = Math.round(total * 0.3);
+
+            document.getElementById('km-text').textContent = km;
+            document.getElementById('total').textContent = '₹' + total.toLocaleString();
+            document.getElementById('deposit').textContent = '₹' + deposit.toLocaleString();
+            document.getElementById('breakdown').textContent = 'Base ₹' + base.toLocaleString() + ' + add-ons ₹' + addons.toLocaleString() + ' + travel ₹' + travelFee.toFixed(0);
+        }
+
+        [category, canvas, travel, ...document.querySelectorAll('.addon')].forEach(input => input.addEventListener('input', calculate));
+        calculate();
+    </script>
+    <script src="chatbot.js"></script>
+</body>
+</html>

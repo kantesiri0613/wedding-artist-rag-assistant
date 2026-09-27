@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Paintings by Harshita | Luxury Live Wedding & Event Fine Art</title>
+    <meta name="description" content="Official website of Harshita (@livepaintingsbyharshita). Capturing royal weddings, varmala, engagement ceremonies, and celebrations live on canvas across India & worldwide.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            300: '#F5E19A',
+                            400: '#E5C158',
+                            500: '#D4AF37',
+                            600: '#B89028',
+                            700: '#916E18',
+                            800: '#6B4E0E'
+                        },
+                        dark: {
+                            800: '#151E2E',
+                            900: '#0C1322',
+                            950: '#070A12',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(12, 19, 34, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(212, 175, 55, 0.22);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.035);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.45);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px -10px rgba(212, 175, 55, 0.15);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF4D0 0%, #E5C158 45%, #B89028 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-glow {
+            box-shadow: 0 0 25px -4px rgba(212, 175, 55, 0.35);
+        }
+        .gold-glow-lg {
+            box-shadow: 0 0 45px -5px rgba(212, 175, 55, 0.45);
+        }
+        /* Page View Switcher Styling */
+        .page-view {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .page-view.active {
+            display: block;
+            opacity: 1;
+        }
+        /* Custom scrollbars */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070A12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1A2538;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+        .pulse-gold {
+            animation: pulse-glow 2.5s infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.6); }
+        }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-100 font-sans antialiased selection:bg-gold-500 selection:text-dark-950 min-h-screen flex flex-col justify-between">
+
+    <!-- Top Announcement & Social Bar -->
+    <div class="bg-gradient-to-r from-dark-900 via-dark-800 to-dark-900 border-b border-gold-500/20 py-1.5 px-4 text-xs text-center text-slate-300 flex flex-wrap justify-center sm:justify-between items-center max-w-7xl mx-auto w-full">
+        <div class="flex items-center gap-2">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span class="text-gold-400 font-semibold">2026-2027 Wedding Dates Open:</span>
+            <span>Reserve early to lock in your live painting date.</span>
+        </div>
+        <div class="flex items-center gap-4 mt-1 sm:mt-0">
+            <a href="https://www.instagram.com/livepaintingsbyharshita/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-gold-400 flex items-center gap-1.5 font-medium transition-colors">
+                <i class="fa-brands fa-instagram text-gold-400"></i> @livepaintingsbyharshita
+            </a>
+            <span class="text-slate-600">|</span>
+            <button onclick="toggleCurrency()" id="currency-toggle-btn" class="px-2.5 py-0.5 rounded-full bg-dark-950 border border-gold-500/30 text-[11px] font-bold text-gold-400 hover:bg-gold-500 hover:text-dark-950 transition-all">
+                Currency: <span id="currency-label">INR (₹)</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN STICKY NAVIGATION HEADER -->
+    <header class="sticky top-0 left-0 right-0 z-50 glass-panel border-b border-gold-500/20 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Artist Name -->
+                <a href="index.html#home" onclick="switchPage('home')" class="flex items-center gap-3.5 group">
+                    <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-gold-700 via-gold-500 to-gold-300 flex items-center justify-center text-dark-950 font-serif font-extrabold text-2xl shadow-lg gold-glow group-hover:scale-105 transition-transform">
+                        H
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white block leading-none">
+                            Live Paintings by <span class="gold-gradient-text">Harshita</span>
+                        </span>
+                        <span class="text-[10px] tracking-widest text-gold-400/90 uppercase font-semibold">Luxury Wedding & Event Fine Art</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden xl:flex items-center space-x-6 text-sm font-medium">
+                    <button onclick="switchPage('home')" class="nav-link text-gold-400 border-b-2 border-gold-500 py-1 transition-colors" data-page="home">Home</button>
+                    <button onclick="switchPage('about')" class="nav-link text-slate-300 hover:text-gold-400 py-1 border-b-2 border-transparent transition-colors" data-page="about">About Harshita</button>
+                    <button onclick="switchPage('videos')" class="nav-link text-slate-300 hover:text-gold-400 py-1 border-b-2 border-transparent transition-colors" data-page="videos">
+                        <i class="fa-solid fa-circle-play text-gold-400 mr-1"></i> Videos & Reels
+                    </button>
+                    <button onclick="switchPage('process')" class="nav-link text-slate-300 hover:text-gold-400 py-1 border-b-2 border-transparent transition-colors" data-page="process">How It Works</button>
+                    <button onclick="switchPage('estimator')" class="nav-link text-slate-300 hover:text-gold-400 py-1 border-b-2 border-transparent transition-colors" data-page="estimator">Price Estimator</button>
+                    <button onclick="switchPage('reviews')" class="nav-link text-slate-300 hover:text-gold-400 py-1 border-b-2 border-transparent transition-colors" data-page="reviews">Reviews</button>
+                    <a href="orders.html" class="text-slate-300 hover:text-gold-400 py-1 transition-colors">Orders</a>
+                    <button onclick="switchPage('faq')" class="nav-link text-slate-300 hover:text-gold-400 py-1 border-b-2 border-transparent transition-colors" data-page="faq">FAQ</button>
+                </nav>
+
+                <!-- Book Now & Quick Contact CTAs -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="https://wa.me/919963473879?text=Hello%20Harshita!%20I%20am%20interested%20in%20booking%20a%20Live%20Wedding%20Painting." target="_blank" class="px-4 py-2 rounded-full glass-card hover:border-emerald-500 text-emerald-400 hover:text-emerald-300 font-semibold text-xs transition-all flex items-center gap-1.5">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> WhatsApp
+                    </a>
+                    <button onclick="openBookingWizard()" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-gold-500 via-amber-500 to-gold-600 hover:from-gold-400 hover:to-amber-500 text-dark-950 font-extrabold text-xs uppercase tracking-wider shadow-lg gold-glow transition-all hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check"></i> Book Artist
+                    </button>
+                </div>
+
+                <!-- Mobile menu toggle button -->
+                <div class="xl:hidden flex items-center gap-2">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-gold-400 p-2 rounded-lg focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden xl:hidden glass-panel border-b border-gold-500/20 px-4 pt-2 pb-6 space-y-2.5">
+            <button onclick="switchPage('home'); closeMobileMenu();" class="block w-full text-left py-2 text-slate-300 hover:text-gold-400 font-medium">Home</button>
+            <button onclick="switchPage('about'); closeMobileMenu();" class="block w-full text-left py-2 text-slate-300 hover:text-gold-400 font-medium">About Harshita</button>
+            <button onclick="switchPage('videos'); closeMobileMenu();" class="block w-full text-left py-2 text-gold-400 font-medium">
+                <i class="fa-solid fa-circle-play text-gold-400 mr-2"></i> Videos & Customer Reels
+            </button>
+            <button onclick="switchPage('process'); closeMobileMenu();" class="block w-full text-left py-2 text-slate-300 hover:text-gold-400 font-medium">How It Works</button>
+            <button onclick="switchPage('estimator'); closeMobileMenu();" class="block w-full text-left py-2 text-slate-300 hover:text-gold-400 font-medium">Price Estimator</button>
+            <button onclick="switchPage('reviews'); closeMobileMenu();" class="block w-full text-left py-2 text-slate-300 hover:text-gold-400 font-medium">Reviews</button>
+            <a href="orders.html" class="block w-full text-left py-2 text-slate-300 hover:text-gold-400 font-medium">Orders</a>
+            <button onclick="switchPage('faq'); closeMobileMenu();" class="block w-full text-left py-2 text-slate-300 hover:text-gold-400 font-medium">FAQ</button>
+
+            <div class="pt-3 flex gap-2">
+                <button onclick="openBookingWizard(); closeMobileMenu();" class="flex-1 py-3 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-dark-950 font-bold text-center text-sm shadow-md">
+                    <i class="fa-solid fa-calendar-check mr-1.5"></i> Book Harshita
+                </button>
+                <a href="https://wa.me/919963473879?text=Hello%20Harshita!%20I%20want%20to%20book%20a%20live%20painting." target="_blank" class="px-4 py-3 rounded-xl bg-emerald-600 text-white font-bold flex items-center justify-center">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER WITH DEDICATED PAGE VIEWS -->
+    <main class="flex-grow">
+
+        <!-- ========================================== -->
+        <!-- 1. HOME PAGE VIEW                          -->
+        <!-- ========================================== -->
+        <div id="page-home" class="page-view active">
+            <!-- Hero Section -->
+            <section class="relative py-16 md:py-28 overflow-hidden">
+                <div class="absolute top-1/4 left-10 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute bottom-10 right-10 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-card text-gold-400 text-xs font-bold uppercase tracking-wider border border-gold-500/40">
+                                <i class="fa-solid fa-palette text-gold-400"></i> Master Live Wedding Artist &bull; Harshita
+                            </div>
+
+                            <h1 class="font-serif text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+                                Immortalize Your <br>
+                                <span class="gold-gradient-text italic font-normal">Precious Wedding Moments</span> <br>
+                                Live On Canvas.
+                            </h1>
+
+                            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                                Elevate your wedding, engagement, or gala with an extraordinary fine art live performance. Watch Harshita capture your Varmala, first dance, or ceremony live on canvas as a timeless museum heirloom.
+                            </p>
+
+                            <!-- Primary CTA Buttons -->
+                            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                                <button onclick="openBookingWizard()" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-gold-500 via-amber-500 to-gold-600 hover:from-gold-400 hover:to-amber-500 text-dark-950 font-extrabold text-sm uppercase tracking-wider shadow-xl gold-glow transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-calendar-check text-base"></i> Book Your Event Date
+                                </button>
+                                <button onclick="switchPage('videos')" class="w-full sm:w-auto px-7 py-4 rounded-full glass-card hover:bg-dark-800 text-slate-200 font-semibold text-sm transition-all border border-slate-700 hover:border-gold-500/50 flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-circle-play text-gold-400 text-base"></i> Watch Live Videos & Timelapses
+                                </button>
+                            </div>
+
+                            <!-- Social Proof Numbers -->
+                            <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+                                <div>
+                                    <div class="font-serif text-2xl sm:text-3xl font-extrabold text-gold-400">300+</div>
+                                    <div class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1">Live Events Painted</div>
+                                </div>
+                                <div>
+                                    <div class="font-serif text-2xl sm:text-3xl font-extrabold text-gold-400">8+ Years</div>
+                                    <div class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1">Live Art Pioneer</div>
+                                </div>
+                                <div>
+                                    <div class="font-serif text-2xl sm:text-3xl font-extrabold text-gold-400">5.0 ★★★★★</div>
+                                    <div class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1">Top Rated Artist</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hero Feature Card with Real Live Painting Image -->
+                        <div class="lg:col-span-5">
+                            <div class="relative glass-card rounded-3xl p-3.5 border border-gold-500/40 gold-glow group">
+                                <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+                                    <img src="assets/images/ART.jpeg" alt="Harshita painting live at luxury wedding ballroom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Masterpieces Preview Section -->
+            <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                    <div>
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20">Hand-Painted Heirlooms</span>
+                        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-3">Recent Live Masterpieces</h2>
+                    </div>
+                    <button onclick="switchPage('gallery')" class="text-gold-400 hover:text-gold-300 font-bold text-sm flex items-center gap-2 group">
+                        Explore Full Gallery <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-gold-500/50 cursor-pointer group" onclick="switchPage('gallery')">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/wedding_paint.jpeg" alt="Wedding painting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-gold-500/50 cursor-pointer group" onclick="switchPage('gallery')">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/Haldi_art.jpeg" alt="Haldi art" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-gold-500/50 cursor-pointer group" onclick="switchPage('gallery')">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/haldi_art2at%2011.33.31%20AM.jpeg" alt="Haldi artwork" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 2. ABOUT HARSHITA PAGE VIEW               -->
+        <!-- ========================================== -->
+        <div id="page-about" class="page-view">
+            <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-gold-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20">The Master Artist</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">Meet Harshita</h2>
+                    <p class="text-slate-400 text-sm sm:text-base">Pioneering live wedding and celebration fine art with passion, precision, and heartfelt emotion.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5 relative">
+                        <div class="glass-card rounded-3xl p-3 border border-gold-500/40 gold-glow">
+                            <img src="assets/images/harshita_artist_potrait.png" alt="Master Live Wedding Artist Harshita" class="w-full h-[520px] object-cover object-top rounded-2xl shadow-xl">
+                            <div class="p-4 text-center">
+                                <span class="font-serif font-bold text-white text-lg block">Harshita</span>
+                                <span class="text-xs text-gold-400 font-medium">Fine Artist & Live Wedding Painter &bull; @livepaintingsbyharshita</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-6">
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white leading-snug">
+                            Capturing Emotion, Sacred Rituals & Golden Light Live On-Site
+                        </h3>
+                        <p class="text-slate-300 leading-relaxed font-light">
+                            With over <strong class="text-gold-400">8+ years of dedicated experience</strong>, Harshita was among the very first artists to bring the magic of live event painting to luxury weddings and galas across India and destination venues worldwide.
+                        </p>
+                        <p class="text-slate-300 leading-relaxed font-light">
+                            From royal palace weddings in Udaipur and Jaipur to beachfront mandaps in Goa and grand ballrooms in Mumbai and Delhi, Harshita creates a mesmerizing live entertainment experience for wedding guests while crafting a generational heirloom for the couple.
+                        </p>
+
+                        <!-- Specialties Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="p-4 rounded-xl glass-card border border-slate-700">
+                                <i class="fa-solid fa-sparkles text-gold-400 text-2xl mb-2"></i>
+                                <h4 class="font-bold text-white text-sm">24K Gold Leaf & Haldi Art</h4>
+                                <p class="text-xs text-slate-400 mt-1">Specialized in embellishing canvases with genuine gold leaf and Haldi magic art.</p>
+                            </div>
+                            <div class="p-4 rounded-xl glass-card border border-slate-700">
+                                <i class="fa-solid fa-shield-halved text-gold-400 text-2xl mb-2"></i>
+                                <h4 class="font-bold text-white text-sm">Archival Museum Quality</h4>
+                                <p class="text-xs text-slate-400 mt-1">Created with artist-grade Belgian linen canvas, high-pigment oils, and UV protective varnish.</p>
+                            </div>
+                        </div>
+
+                        <!-- Setup requirements diagram/details -->
+                        <div class="p-6 rounded-2xl glass-panel border border-gold-500/20 mt-6">
+                            <h4 class="font-serif font-bold text-gold-400 text-base mb-3"><i class="fa-solid fa-sliders mr-2"></i> Simple Venue Setup Requirements</h4>
+                            <ul class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> 6x6 ft Easel Space</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Standard Power Outlet</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Self-Contained Lighting</li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-4 flex flex-wrap gap-4">
+                            <button onclick="openBookingWizard()" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-gold-500 to-amber-600 text-dark-950 font-bold text-sm shadow-lg gold-glow">
+                                <i class="fa-solid fa-calendar-check mr-2"></i> Book Harshita for Your Date
+                            </button>
+                            <a href="https://www.instagram.com/livepaintingsbyharshita/" target="_blank" class="px-6 py-3.5 rounded-full glass-card hover:border-gold-500 text-slate-200 font-semibold text-sm flex items-center gap-2">
+                                <i class="fa-brands fa-instagram text-gold-400"></i> Follow on Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 3. GALLERY PAGE VIEW                       -->
+        <!-- ========================================== -->
+        <div id="page-gallery" class="page-view">
+            <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                    <span class="text-gold-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20">Exhibition Portfolio</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">Live Art Masterpieces</h2>
+                    <p class="text-slate-400 text-sm sm:text-base">Explore real live paintings by Harshita from recent weddings, engagement ceremonies, and celebrations.</p>
+                </div>
+
+                <!-- Gallery Category Filters -->
+                <div class="flex flex-wrap justify-center gap-3 mb-12" id="gallery-filters">
+                    <button onclick="filterGallery('all', this)" class="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-gold-500 text-dark-950 filter-btn">All Works</button>
+                    <button onclick="filterGallery('wedding', this)" class="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all glass-card text-slate-300 hover:text-gold-400 border border-slate-700 filter-btn">Weddings & Varmala</button>
+                    <button onclick="filterGallery('engagement', this)" class="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all glass-card text-slate-300 hover:text-gold-400 border border-slate-700 filter-btn">Engagement Ceremonies</button>
+                    <button onclick="filterGallery('sketches', this)" class="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all glass-card text-slate-300 hover:text-gold-400 border border-slate-700 filter-btn">Live Guest Sketches</button>
+                    <button onclick="filterGallery('corporate', this)" class="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all glass-card text-slate-300 hover:text-gold-400 border border-slate-700 filter-btn">Galas & Events</button>
+                </div>
+
+                <!-- Gallery Grid with Real Artwork -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
+                    
+                    <!-- Item 1: Engagement Ceremony Artwork -->
+                    <div class="gallery-item glass-card rounded-2xl overflow-hidden border border-slate-700 hover:border-gold-500/50 transition-all cursor-pointer group" data-category="engagement"
+                         onclick="openGalleryModal('Indian Engagement Ceremony', 'Engagement & Roka', '24x36 inches', '4 Hours Live on Canvas', 'assets/images/wedding_ceremony_painting.jpg', 'Pooja & Karan R., New Delhi')">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/wedding_ceremony_painting.jpg" alt="Engagement Ceremony Live Painting by Harshita" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-dark-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="px-4 py-2 rounded-full bg-gold-500 text-dark-950 text-xs font-bold"><i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Inspect Artwork</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-gold-400 font-semibold uppercase">Engagement Ceremony</span>
+                            <h3 class="font-serif text-lg font-bold text-white mt-1">Garden Altar & Arch</h3>
+                            <p class="text-xs text-slate-400 mt-1">24" x 36" Oil & Acrylic &bull; Signed by Harshita</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Ballroom First Dance -->
+                    <div class="gallery-item glass-card rounded-2xl overflow-hidden border border-slate-700 hover:border-gold-500/50 transition-all cursor-pointer group" data-category="wedding"
+                         onclick="openGalleryModal('Grand Ballroom First Dance', 'Wedding Reception', '30x40 inches', '5 Hours Live', 'assets/images/first_dance_painting.jpg', 'Ananya & Siddharth, The Leela Palace')">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/first_dance_painting.jpg" alt="Ballroom First Dance Live Painting by Harshita" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-dark-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="px-4 py-2 rounded-full bg-gold-500 text-dark-950 text-xs font-bold"><i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Inspect Artwork</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-gold-400 font-semibold uppercase">Wedding Reception</span>
+                            <h3 class="font-serif text-lg font-bold text-white mt-1">Grand Ballroom First Dance</h3>
+                            <p class="text-xs text-slate-400 mt-1">30" x 40" Oil & 24K Gold Leaf Details</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Live Guest Watercolor Sketches -->
+                    <div class="gallery-item glass-card rounded-2xl overflow-hidden border border-slate-700 hover:border-gold-500/50 transition-all cursor-pointer group" data-category="sketches"
+                         onclick="openGalleryModal('Live Guest Watercolor Vignettes', 'Live Guest Sketches', 'Deckled Cotton Paper', '5 Mins Per Guest', 'assets/images/guest_watercolor_sketches.jpg', 'Meera & Rohan Wedding Favors, Goa')">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/guest_watercolor_sketches.jpg" alt="Guest Watercolor Portraits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-dark-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="px-4 py-2 rounded-full bg-gold-500 text-dark-950 text-xs font-bold"><i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Inspect Artwork</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-emerald-400 font-semibold uppercase">Guest Sketches</span>
+                            <h3 class="font-serif text-lg font-bold text-white mt-1">Guest Watercolor Favors</h3>
+                            <p class="text-xs text-slate-400 mt-1">Express Watercolor Portraits on Cotton Paper</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Hero Live Painting in Ballroom -->
+                    <div class="gallery-item glass-card rounded-2xl overflow-hidden border border-slate-700 hover:border-gold-500/50 transition-all cursor-pointer group" data-category="wedding"
+                         onclick="openGalleryModal('Palace Varmala & Reception Celebration', 'Wedding Ceremony', '36x48 inches', '6 Hours Live', 'assets/images/hero_harshita_live.jpg', 'Aarav & Simran, Udaipur')">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/hero_harshita_live.jpg" alt="Royal Wedding Ceremony Live Painting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-dark-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="px-4 py-2 rounded-full bg-gold-500 text-dark-950 text-xs font-bold"><i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Inspect Artwork</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-gold-400 font-semibold uppercase">Royal Wedding</span>
+                            <h3 class="font-serif text-lg font-bold text-white mt-1">Palace Celebration Live Canvas</h3>
+                            <p class="text-xs text-slate-400 mt-1">36" x 48" Masterpiece Statement Canvas</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Corporate Gala Keynote -->
+                    <div class="gallery-item glass-card rounded-2xl overflow-hidden border border-slate-700 hover:border-gold-500/50 transition-all cursor-pointer group" data-category="corporate"
+                         onclick="openGalleryModal('Charity Gala Keynote & Auction', 'Corporate Gala', '36x48 inches', '5 Hours Live', 'assets/images/corporate_gala_painting.jpg', 'Annual Healthcare Foundation Gala')">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/corporate_gala_painting.jpg" alt="Corporate Gala Live Painting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-dark-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="px-4 py-2 rounded-full bg-gold-500 text-dark-950 text-xs font-bold"><i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Inspect Artwork</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-purple-400 font-semibold uppercase">Corporate Gala</span>
+                            <h3 class="font-serif text-lg font-bold text-white mt-1">Charity Gala Live Performance</h3>
+                            <p class="text-xs text-slate-400 mt-1">36" x 48" Mixed Media & Stage Lighting</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: Artist in Studio with Master Canvas -->
+                    <div class="gallery-item glass-card rounded-2xl overflow-hidden border border-slate-700 hover:border-gold-500/50 transition-all cursor-pointer group" data-category="engagement"
+                         onclick="openGalleryModal('Studio Polished Wedding Heirloom', 'Fine Art Studio', '30x40 inches', 'Studio Finalized', 'assets/images/hero_harshita_live.jpg', 'Harshita Fine Art Studio')">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/images/hero_harshita_live.jpg" alt="Harshita Studio Finished Artwork" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-dark-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="px-4 py-2 rounded-full bg-gold-500 text-dark-950 text-xs font-bold"><i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Inspect Artwork</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-amber-400 font-semibold uppercase">Studio Masterpiece</span>
+                            <h3 class="font-serif text-lg font-bold text-white mt-1">Archival Finished Wedding Canvas</h3>
+                            <p class="text-xs text-slate-400 mt-1">UV Varnished & Gold Framed Ready for Display</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Studio Touch-up Comparison Feature -->
+                <div class="mt-20 p-8 rounded-3xl glass-panel border border-gold-500/30">
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <h3 class="font-serif text-2xl font-bold text-white">Live Event vs Studio Touch-Up Process</h3>
+                        <p class="text-slate-400 text-xs mt-1">Toggle below to see how Harshita refines fine facial details and applies UV varnish in the studio.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-3">
+                            <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-gold-500/40 relative shadow-2xl">
+                                <img id="touchup-img" src="assets/images/wedding_ceremony_painting.jpg" class="w-full h-full object-cover transition-all duration-500">
+                                <span id="touchup-badge" class="absolute top-3 left-3 px-3 py-1 rounded-full bg-amber-500 text-dark-950 text-xs font-bold">1. Live Event Stage (85-90% Done Live)</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h4 class="font-serif text-xl font-bold text-gold-400">Refining Details & 24K Gold Embellishments</h4>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                While 85-90% of your canvas is painted live during your celebration so all your guests can marvel at the performance, you can opt for the studio polish add-on where Harshita cures the oil, refines micro-facial contours, and applies museum-grade UV varnish.
+                            </p>
+                            <div class="flex gap-3 pt-2">
+                                <button onclick="toggleTouchup('live')" id="btn-touchup-live" class="px-5 py-2.5 rounded-lg bg-gold-500 text-dark-950 text-xs font-bold transition-all">View Live Canvas Stage</button>
+                                <button onclick="toggleTouchup('final')" id="btn-touchup-final" class="px-5 py-2.5 rounded-lg glass-card text-slate-300 hover:text-gold-400 text-xs font-bold border border-slate-700 transition-all">View Studio Polished Final</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 4. VIDEOS & CUSTOMER REELS PAGE VIEW       -->
+        <!-- ========================================== -->
+        <div id="page-videos" class="page-view">
+            <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="rounded-[2rem] border border-gold-500/30 bg-[#071522] p-8 md:p-12 text-center shadow-[0_0_35px_rgba(212,175,55,0.08)]">
+                    <div class="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full border-2 border-gold-500/70 text-gold-400 text-4xl">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">Watch Daily Live Wedding Reels</h2>
+
+                    <p class="mx-auto mt-6 max-w-4xl text-base text-slate-300 leading-relaxed">
+                        Follow Harshita on Instagram for weekly behind-the-scenes, live ceremony stories, and new painting reveals.
+                    </p>
+
+                    <a href="https://www.instagram.com/livepaintingsbyharshita/" target="_blank" rel="noopener noreferrer"
+                       class="mt-8 inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 px-8 py-4 text-sm font-extrabold uppercase tracking-wider text-white shadow-[0_12px_32px_rgba(168,85,247,0.5)] transition-transform hover:scale-[1.02]">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                        Follow @livepaintingsbyharshita
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 5. HOW IT WORKS PAGE VIEW                  -->
+        <!-- ========================================== -->
+        <div id="page-process" class="page-view">
+            <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-gold-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20">Step-By-Step Journey</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">How Live Painting Works</h2>
+                    <p class="text-slate-400 text-sm sm:text-base">Seamless collaboration with Harshita from booking through final delivery.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="glass-card rounded-2xl p-6 border border-slate-700 relative text-center">
+                        <div class="w-12 h-12 rounded-full bg-gold-500/10 border border-gold-500/40 text-gold-400 flex items-center justify-center font-serif font-bold text-xl mx-auto mb-4">1</div>
+                        <h3 class="font-serif font-bold text-white text-lg mb-2">1. Consultation & Date Lock</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">We select your key moment (Varmala, Ring Exchange, First Dance, Altar), canvas size, and lock your date with a 30% advance deposit.</p>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 border border-slate-700 relative text-center">
+                        <div class="w-12 h-12 rounded-full bg-gold-500/10 border border-gold-500/40 text-gold-400 flex items-center justify-center font-serif font-bold text-xl mx-auto mb-4">2</div>
+                        <h3 class="font-serif font-bold text-white text-lg mb-2">2. On-Site Setup</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Harshita arrives 1.5 to 2 hours before the ceremony with easel, archival canvas, lighting, and paints to establish background decor and architectural perspective.</p>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 border border-slate-700 relative text-center">
+                        <div class="w-12 h-12 rounded-full bg-gold-500/10 border border-gold-500/40 text-gold-400 flex items-center justify-center font-serif font-bold text-xl mx-auto mb-4">3</div>
+                        <h3 class="font-serif font-bold text-white text-lg mb-2">3. Live Performance</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">4 to 6 hours of captivating live performance. Guests watch the painting evolve and can interact with Harshita throughout the function.</p>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 border border-slate-700 relative text-center">
+                        <div class="w-12 h-12 rounded-full bg-gold-500/10 border border-gold-500/40 text-gold-400 flex items-center justify-center font-serif font-bold text-xl mx-auto mb-4">4</div>
+                        <h3 class="font-serif font-bold text-white text-lg mb-2">4. Studio Polish & Delivery</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Take the 85-90% done canvas home on the same night, or let Harshita apply studio facial detailing, 24K gold leaf, and protective UV varnishing before secure delivery.</p>
+                    </div>
+                </div>
+
+                <div class="mt-14 text-center">
+                    <button onclick="openBookingWizard()" class="px-8 py-4 rounded-full bg-gradient-to-r from-gold-500 to-amber-600 text-dark-950 font-extrabold text-sm uppercase tracking-wider shadow-lg gold-glow">
+                        <i class="fa-solid fa-calendar-check mr-2"></i> Book Harshita for Your Wedding
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 6. ESTIMATOR PAGE VIEW                     -->
+        <!-- ========================================== -->
+        <div id="page-estimator" class="page-view">
+            <section class="py-16 md:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12 space-y-4">
+                    <span class="text-gold-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20">Instant Calculator</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">Live Price & Package Estimator</h2>
+                    <p class="text-slate-400 text-sm">Calculate your personalized live painting quote based on canvas size, ceremony type, and luxury add-ons.</p>
+                </div>
+
+                <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-gold-500/30 gold-glow">
+                    <form id="estimator-form" onsubmit="return false;" class="space-y-8">
+                        
+                        <!-- 1. Event Category Selector -->
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <label class="text-gold-400 text-xs font-bold uppercase tracking-wider">1. Event Category</label>
+                                <span class="text-xs text-slate-400">Select celebration style</span>
+                            </div>
+                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-3" id="event-type-grid">
+                                <button type="button" onclick="setEventType('wedding', 1.0, this)" class="event-type-btn p-3.5 rounded-xl glass-card border border-gold-500 text-center transition-all bg-gold-500/10">
+                                    <i class="fa-solid fa-ring text-gold-400 text-xl block mb-1"></i>
+                                    <span class="text-xs font-bold text-white block">Wedding & Varmala</span>
+                                </button>
+                                <button type="button" onclick="setEventType('engagement', 1.0, this)" class="event-type-btn p-3.5 rounded-xl glass-card border border-slate-700 text-center transition-all hover:border-gold-500/50">
+                                    <i class="fa-solid fa-gem text-gold-400 text-xl block mb-1"></i>
+                                    <span class="text-xs font-bold text-white block">Engagement</span>
+                                </button>
+                                <button type="button" onclick="setEventType('sangeet', 1.0, this)" class="event-type-btn p-3.5 rounded-xl glass-card border border-slate-700 text-center transition-all hover:border-gold-500/50">
+                                    <i class="fa-solid fa-sun text-gold-400 text-xl block mb-1"></i>
+                                    <span class="text-xs font-bold text-white block">Haldi / Sangeet</span>
+                                </button>
+                                <button type="button" onclick="setEventType('corporate', 1.15, this)" class="event-type-btn p-3.5 rounded-xl glass-card border border-slate-700 text-center transition-all hover:border-gold-500/50">
+                                    <i class="fa-solid fa-building text-gold-400 text-xl block mb-1"></i>
+                                    <span class="text-xs font-bold text-white block">Corporate Gala</span>
+                                </button>
+                                <button type="button" onclick="setEventType('anniversary', 0.95, this)" class="event-type-btn p-3.5 rounded-xl glass-card border border-slate-700 text-center transition-all hover:border-gold-500/50">
+                                    <i class="fa-solid fa-champagne-glasses text-gold-400 text-xl block mb-1"></i>
+                                    <span class="text-xs font-bold text-white block">Anniversary</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 2. Canvas Size Selector -->
+                        <div>
+                            <label class="block text-gold-400 text-xs font-bold uppercase tracking-wider mb-3">2. Canvas Dimensions</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4" id="canvas-size-grid">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="canvasSize" value="18x24" data-base-inr="25000" data-base-usd="350" class="peer hidden" onchange="calculateLiveQuote()">
+                                    <div class="p-4 rounded-xl glass-card border border-slate-700 peer-checked:border-gold-500 peer-checked:bg-gold-500/10 transition-all h-full flex flex-col justify-between">
+                                        <div>
+                                            <div class="font-serif font-bold text-white text-base">18" x 24"</div>
+                                            <div class="text-xs text-gold-400 font-bold mt-1 canvas-price-text">₹25,000</div>
+                                        </div>
+                                        <p class="text-[11px] text-slate-400 mt-2">Intimate couple-focused portraiture.</p>
+                                    </div>
+                                </label>
+
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="canvasSize" value="24x36" data-base-inr="45000" data-base-usd="600" class="peer hidden" checked onchange="calculateLiveQuote()">
+                                    <div class="p-4 rounded-xl glass-card border border-slate-700 peer-checked:border-gold-500 peer-checked:bg-gold-500/10 transition-all h-full flex flex-col justify-between relative">
+                                        <span class="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full bg-gold-500 text-dark-950 text-[9px] font-extrabold uppercase">Most Popular</span>
+                                        <div>
+                                            <div class="font-serif font-bold text-white text-base">24" x 36"</div>
+                                            <div class="text-xs text-gold-400 font-bold mt-1 canvas-price-text">₹45,000</div>
+                                        </div>
+                                        <p class="text-[11px] text-slate-400 mt-2">Top choice for Indian weddings & mandap decor.</p>
+                                    </div>
+                                </label>
+
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="canvasSize" value="30x40" data-base-inr="65000" data-base-usd="850" class="peer hidden" onchange="calculateLiveQuote()">
+                                    <div class="p-4 rounded-xl glass-card border border-slate-700 peer-checked:border-gold-500 peer-checked:bg-gold-500/10 transition-all h-full flex flex-col justify-between">
+                                        <div>
+                                            <div class="font-serif font-bold text-white text-base">30" x 40"</div>
+                                            <div class="text-xs text-gold-400 font-bold mt-1 canvas-price-text">₹65,000</div>
+                                        </div>
+                                        <p class="text-[11px] text-slate-400 mt-2">Grand Statement. Broad architectural stage scale.</p>
+                                    </div>
+                                </label>
+
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="canvasSize" value="36x48" data-base-inr="90000" data-base-usd="1200" class="peer hidden" onchange="calculateLiveQuote()">
+                                    <div class="p-4 rounded-xl glass-card border border-slate-700 peer-checked:border-gold-500 peer-checked:bg-gold-500/10 transition-all h-full flex flex-col justify-between">
+                                        <div>
+                                            <div class="font-serif font-bold text-white text-base">36" x 48"</div>
+                                            <div class="text-xs text-gold-400 font-bold mt-1 canvas-price-text">₹90,000</div>
+                                        </div>
+                                        <p class="text-[11px] text-slate-400 mt-2">Museum Masterpiece. Maximum guest detail.</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 3. Add-ons & Customizations -->
+                        <div>
+                            <label class="block text-gold-400 text-xs font-bold uppercase tracking-wider mb-3">3. Luxury Add-ons</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <label class="cursor-pointer flex items-center justify-between p-3.5 rounded-xl glass-card border border-slate-700 hover:border-slate-600">
+                                    <span class="flex items-center gap-2 text-xs text-white font-medium">
+                                        <input type="checkbox" name="addon" value="touchups" data-price-inr="5000" data-price-usd="65" class="w-4 h-4 accent-gold-500" onchange="calculateLiveQuote()">
+                                        Studio UV Museum Varnish & Refinement
+                                    </span>
+                                    <span class="text-xs text-gold-400 font-bold addon-price-text">+₹5,000</span>
+                                </label>
+
+                                <label class="cursor-pointer flex items-center justify-between p-3.5 rounded-xl glass-card border border-slate-700 hover:border-slate-600">
+                                    <span class="flex items-center gap-2 text-xs text-white font-medium">
+                                        <input type="checkbox" name="addon" value="goldLeaf" data-price-inr="4000" data-price-usd="55" class="w-4 h-4 accent-gold-500" onchange="calculateLiveQuote()">
+                                        24K Genuine Gold Leaf Embellishments
+                                    </span>
+                                    <span class="text-xs text-gold-400 font-bold addon-price-text">+₹4,000</span>
+                                </label>
+
+                                <label class="cursor-pointer flex items-center justify-between p-3.5 rounded-xl glass-card border border-slate-700 hover:border-slate-600">
+                                    <span class="flex items-center gap-2 text-xs text-white font-medium">
+                                        <input type="checkbox" name="addon" value="guestPortraits" data-price-inr="6000" data-price-usd="80" class="w-4 h-4 accent-gold-500" onchange="calculateLiveQuote()">
+                                        Extra Key Family Portrait Faces (2 Faces)
+                                    </span>
+                                    <span class="text-xs text-gold-400 font-bold addon-price-text">+₹6,000</span>
+                                </label>
+
+                                <label class="cursor-pointer flex items-center justify-between p-3.5 rounded-xl glass-card border border-slate-700 hover:border-slate-600">
+                                    <span class="flex items-center gap-2 text-xs text-white font-medium">
+                                        <input type="checkbox" name="addon" value="framing" data-price-inr="7500" data-price-usd="100" class="w-4 h-4 accent-gold-500" onchange="calculateLiveQuote()">
+                                        Custom Ornate Gold / Teakwood Framing
+                                    </span>
+                                    <span class="text-xs text-gold-400 font-bold addon-price-text">+₹7,500</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 4. Date & Travel Distance -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-slate-800">
+                            <div>
+                                <label class="block text-gold-400 text-xs font-bold uppercase tracking-wider mb-2">4. Event Date</label>
+                                <input type="date" id="estimator-date" class="w-full px-4 py-3 rounded-xl bg-dark-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-gold-500">
+                            </div>
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <label class="text-gold-400 text-xs font-bold uppercase tracking-wider">Travel Distance from Studio</label>
+                                    <span class="text-xs text-white font-bold" id="travel-km-text">0 km (Local Venue)</span>
+                                </div>
+                                <input type="range" id="travel-range" min="0" max="300" step="10" value="0" class="w-full accent-gold-500" oninput="updateTravelKm(this.value)">
+                                <p class="text-[11px] text-slate-400 mt-1">First 50 km free. ₹30/km afterwards (for road transit).</p>
+                            </div>
+                        </div>
+
+                        <!-- 5. Dynamic Quote Display Breakdown -->
+                        <div class="p-6 rounded-2xl bg-dark-900 border border-gold-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
+                            <div class="space-y-1 text-center md:text-left">
+                                <span class="text-xs text-slate-400 uppercase tracking-wider">Estimated Total Investment</span>
+                                <div class="font-serif text-3xl sm:text-4xl font-bold gold-gradient-text" id="calculated-total">₹45,000</div>
+                                <p class="text-[11px] text-slate-400" id="calculation-breakdown-text">Base: ₹45,000 | Add-ons: ₹0 | Travel: ₹0</p>
+                                <p class="text-[11px] text-gold-400/90 font-medium">30% Advance Deposit to Lock Date: <span id="deposit-amount-preview">₹13,500</span></p>
+                            </div>
+
+                            <button type="button" onclick="transferEstimateToBooking()" class="w-full md:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-dark-950 font-extrabold text-sm uppercase tracking-wider shadow-lg gold-glow transition-all hover:scale-105">
+                                <i class="fa-solid fa-calendar-check mr-2"></i> Book This Custom Package
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 7. REVIEWS & LOVE LETTERS PAGE VIEW        -->
+        <!-- ========================================== -->
+        <div id="page-reviews" class="page-view">
+            <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-gold-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20">Love Letters & Testimonials</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">Words From Our Couples</h2>
+                    <p class="text-slate-400 text-sm">Read what couples and wedding planners say about having Harshita paint live at their celebrations.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-card rounded-2xl p-7 border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <div class="text-gold-400 text-sm mb-3">★★★★★</div>
+                            <p class="text-xs text-slate-300 leading-relaxed italic">"Having Harshita paint our Varmala live at the palace in Udaipur was the highlight of our wedding! Our guests were crowded around her easel in awe watching the gold leaf and flowers come to life."</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <div>
+                                <h4 class="text-white text-xs font-bold">Pooja & Rohan S.</h4>
+                                <span class="text-[10px] text-slate-400">Wedding at Taj Lake Palace, Udaipur</span>
+                            </div>
+                            <span class="text-[10px] text-gold-400 font-bold">Verified Bride</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-7 border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <div class="text-gold-400 text-sm mb-3">★★★★★</div>
+                            <p class="text-xs text-slate-300 leading-relaxed italic">"Harshita captured our ballroom first dance in Delhi so gorgeously! The painting is now the centerpiece of our living room. Her attention to bridal lehenga detail and lighting is unbelievable."</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <div>
+                                <h4 class="text-white text-xs font-bold">Ananya & Siddharth K.</h4>
+                                <span class="text-[10px] text-slate-400">Reception at The Leela Palace, New Delhi</span>
+                            </div>
+                            <span class="text-[10px] text-gold-400 font-bold">Verified Couple</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-7 border border-slate-700 flex flex-col justify-between">
+                        <div>
+                            <div class="text-gold-400 text-sm mb-3">★★★★★</div>
+                            <p class="text-xs text-slate-300 leading-relaxed italic">"The guest watercolor portraits at our beachside Goa reception were an absolute sensation! Every single guest went home with a framed keepsake of themselves. Best wedding decision ever!"</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <div>
+                                <h4 class="text-white text-xs font-bold">Meera & Karan D.</h4>
+                                <span class="text-[10px] text-slate-400">Beach Wedding in Goa</span>
+                            </div>
+                            <span class="text-[10px] text-gold-400 font-bold">Verified Bride</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-14 text-center">
+                    <button onclick="openBookingWizard()" class="px-8 py-4 rounded-full bg-gradient-to-r from-gold-500 to-amber-600 text-dark-950 font-extrabold text-sm uppercase tracking-wider shadow-lg gold-glow">
+                        <i class="fa-solid fa-calendar-check mr-2"></i> Book Harshita for Your Wedding
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 8. FAQ PAGE VIEW                           -->
+        <!-- ========================================== -->
+        <div id="page-faq" class="page-view">
+            <section class="py-16 md:py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12 space-y-4">
+                    <span class="text-gold-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20">Questions & Answers</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center hover:text-gold-400 transition-colors">
+                            <span>How far in advance should I book Harshita?</span>
+                            <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4 text-xs text-slate-300 leading-relaxed border-t border-slate-800/50 pt-3">
+                            Due to high demand for auspicious wedding dates, we recommend booking 4 to 12 months in advance. Dates are reserved on a first-come, first-served basis upon receipt of the 30% advance deposit.
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center hover:text-gold-400 transition-colors">
+                            <span>Does Harshita travel for destination weddings?</span>
+                            <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4 text-xs text-slate-300 leading-relaxed border-t border-slate-800/50 pt-3">
+                            Yes! Harshita frequently travels across India (Goa, Udaipur, Jaipur, Mumbai, Delhi, Bengaluru, Kerala) and internationally (Dubai, Thailand, Europe). Travel and lodging are arranged transparently with the client.
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center hover:text-gold-400 transition-colors">
+                            <span>Do we get to take the canvas home on the same night?</span>
+                            <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4 text-xs text-slate-300 leading-relaxed border-t border-slate-800/50 pt-3">
+                            Yes! Approximately 85-90% of the artwork is completed live during your event so you can take it home that night. If you add the Studio Polish add-on, Harshita will take it back to the studio for fine facial detail touch-ups, drying, and UV protective varnishing, delivering it within 10-14 days.
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center hover:text-gold-400 transition-colors">
+                            <span>What does Harshita require at the event venue?</span>
+                            <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4 text-xs text-slate-300 leading-relaxed border-t border-slate-800/50 pt-3">
+                            Harshita only requires a 6x6 ft footprint for her wooden easel, access to a standard electrical outlet for professional studio lighting, and a clear line of sight to the stage, mandap, or dance floor.
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- 4-STEP INTERACTIVE BOOKING WIZARD MODAL    -->
+    <!-- ========================================== -->
+    <div id="booking-wizard-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-dark-950/85 backdrop-blur-md overflow-y-auto">
+        <div class="relative max-w-2xl w-full glass-panel rounded-3xl overflow-hidden border border-gold-500/40 p-6 sm:p-8 my-8 shadow-2xl gold-glow-lg">
+            
+            <button onclick="closeBookingWizard()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-dark-800 text-slate-300 hover:text-white flex items-center justify-center">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Wizard Header -->
+            <div class="mb-6">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 text-gold-400 text-[10px] font-bold uppercase tracking-wider mb-2 border border-gold-500/20">
+                    <i class="fa-solid fa-calendar-check"></i> Direct Artist Booking
+                </div>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Book Live Painter Harshita</h3>
+                <p class="text-xs text-slate-400">Lock your wedding date with real-time estimation & instant confirmation.</p>
+                
+                <!-- Wizard Step Progress Bar -->
+                <div class="grid grid-cols-4 gap-2 mt-4">
+                    <div id="step-tab-1" class="h-1.5 rounded-full bg-gold-500 transition-all"></div>
+                    <div id="step-tab-2" class="h-1.5 rounded-full bg-slate-800 transition-all"></div>
+                    <div id="step-tab-3" class="h-1.5 rounded-full bg-slate-800 transition-all"></div>
+                    <div id="step-tab-4" class="h-1.5 rounded-full bg-slate-800 transition-all"></div>
+                </div>
+                <div class="flex justify-between text-[10px] text-slate-400 mt-1 font-semibold uppercase tracking-wider">
+                    <span id="step-label-1" class="text-gold-400">1. Event</span>
+                    <span id="step-label-2">2. Canvas</span>
+                    <span id="step-label-3">3. Add-ons</span>
+                    <span id="step-label-4">4. Confirm</span>
+                </div>
+            </div>
+
+            <!-- STEP 1: EVENT DETAILS -->
+            <div id="wizard-step-1" class="wizard-step space-y-4">
+                <h4 class="text-sm font-bold text-gold-400 uppercase tracking-wider">Step 1: Event & Date Details</h4>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Event Category</label>
+                        <select id="bw-event-type" class="w-full px-3.5 py-3 rounded-xl bg-dark-800 border border-slate-700 text-white text-xs focus:border-gold-500 focus:outline-none" onchange="updateWizardSummary()">
+                            <option value="wedding">Wedding & Varmala Ceremony</option>
+                            <option value="engagement">Engagement / Ring Ceremony</option>
+                            <option value="sangeet">Haldi & Sangeet Celebration</option>
+                            <option value="corporate">Corporate Gala / Keynote</option>
+                            <option value="anniversary">Anniversary / Milestone</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Event Date</label>
+                        <input type="date" id="bw-date" required class="w-full px-3.5 py-3 rounded-xl bg-dark-800 border border-slate-700 text-white text-xs focus:border-gold-500 focus:outline-none" onchange="checkDateAvailability(this.value)">
+                        <div id="date-avail-badge" class="mt-1 text-[11px] text-emerald-400 font-semibold hidden">
+                            <i class="fa-solid fa-circle-check mr-1"></i> Date Available for Harshita!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">City / Location</label>
+                        <input type="text" id="bw-city" placeholder="e.g. Udaipur, Goa, Delhi, Mumbai" required class="w-full px-3.5 py-3 rounded-xl bg-dark-800 border border-slate-700 text-white text-xs focus:border-gold-500 focus:outline-none" oninput="updateWizardSummary()">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Venue Name</label>
+                        <input type="text" id="bw-venue" placeholder="e.g. Taj Lake Palace, The Leela" required class="w-full px-3.5 py-3 rounded-xl bg-dark-800 border border-slate-700 text-white text-xs focus:border-gold-500 focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="flex justify-end pt-4">
+                    <button type="button" onclick="goToWizardStep(2)" class="px-6 py-3 rounded-full bg-gold-500 hover:bg-gold-400 text-dark-950 font-bold text-xs uppercase tracking-wider">
+                        Next: Choose Canvas Size &rarr;
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 2: CANVAS SIZE & KEY MOMENT -->
+            <div id="wizard-step-2" class="wizard-step hidden space-y-4">
+                <h4 class="text-sm font-bold text-gold-400 uppercase tracking-wider">Step 2: Canvas Size & Key Moment</h4>
+                
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-2">Select Canvas Dimensions</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="bw-canvas" value="18x24" data-price-inr="25000" data-price-usd="350" class="peer hidden" onchange="updateWizardSummary()">
+                            <div class="p-3.5 rounded-xl glass-card border border-slate-700 peer-checked:border-gold-500 peer-checked:bg-gold-500/10">
+                                <div class="font-bold text-white text-xs">18" x 24" Intimate Canvas</div>
+                                <div class="text-[11px] text-gold-400 font-bold bw-canvas-price">₹25,000 / $350</div>
+                                <p class="text-[10px] text-slate-400">Great for smaller stages or couple focus.</p>
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer">
+                            <input type="radio" name="bw-canvas" value="24x36" data-price-inr="45000" data-price-usd="600" checked class="peer hidden" onchange="updateWizardSummary()">
+                            <div class="p-3.5 rounded-xl glass-card border border-slate-700 peer-checked:border-gold-500 peer-checked:bg-gold-500/10 relative">
+                                <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-gold-500 text-dark-950 text-[9px] font-extrabold">Popular</span>
+                                <div class="font-bold text-white text-xs">24" x 36" Classic Standard</div>
+                                <div class="text-[11px] text-gold-400 font-bold bw-canvas-price">₹45,000 / $600</div>
+                                <p class="text-[10px] text-slate-400">Mandap decor + couple + guest silhouettes.</p>
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer">
+                            <input type="radio" name="bw-canvas" value="30x40" data-price-inr="65000" data-price-usd="850" class="peer hidden" onchange="updateWizardSummary()">
+                            <div class="p-3.5 rounded-xl glass-card border border-slate-700 peer-checked:border-gold-500 peer-checked:bg-gold-500/10">
+                                <div class="font-bold text-white text-xs">30" x 40" Grand Luxury Canvas</div>
+                                <div class="text-[11px] text-gold-400 font-bold bw-canvas-price">₹65,000 / $850</div>
+                                <p class="text-[10px] text-slate-400">Grand statement piece with high architecture detail.</p>
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer">
+                            <input type="radio" name="bw-canvas" value="36x48" data-price-inr="90000" data-price-usd="1200" class="peer hidden" onchange="updateWizardSummary()">
+                            <div class="p-3.5 rounded-xl glass-card border border-slate-700 peer-checked:border-gold-500 peer-checked:bg-gold-500/10">
+                                <div class="font-bold text-white text-xs">36" x 48" Masterpiece Statement</div>
+                                <div class="text-[11px] text-gold-400 font-bold bw-canvas-price">₹90,000 / $1,200</div>
+                                <p class="text-[10px] text-slate-400">Museum scale with complex lighting and guests.</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Key Moment to Paint Live</label>
+                    <select id="bw-moment" class="w-full px-3.5 py-3 rounded-xl bg-dark-800 border border-slate-700 text-white text-xs focus:border-gold-500 focus:outline-none" onchange="updateWizardSummary()">
+                        <option value="Varmala Garland Exchange">Varmala Garland Exchange on Stage / Mandap</option>
+                        <option value="First Dance under Chandeliers">Romantic First Dance under Chandeliers</option>
+                        <option value="Engagement Ring Exchange">Ring Exchange / Roka Ceremony</option>
+                        <option value="Seven Pheras around Sacred Fire">Seven Pheras around the Sacred Fire</option>
+                        <option value="Grand Stage Entry with Fireworks">Grand Couple Entry with Fireworks / Cold Pyros</option>
+                        <option value="Custom Moment">Custom Moment (Discuss with Harshita)</option>
+                    </select>
+                </div>
+
+                <div class="flex justify-between pt-4">
+                    <button type="button" onclick="goToWizardStep(1)" class="px-5 py-2.5 rounded-full glass-card text-slate-300 text-xs font-semibold">
+                        &larr; Back
+                    </button>
+                    <button type="button" onclick="goToWizardStep(3)" class="px-6 py-3 rounded-full bg-gold-500 hover:bg-gold-400 text-dark-950 font-bold text-xs uppercase tracking-wider">
+                        Next: Luxury Add-ons &rarr;
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 3: LUXURY ADD-ONS -->
+            <div id="wizard-step-3" class="wizard-step hidden space-y-4">
+                <h4 class="text-sm font-bold text-gold-400 uppercase tracking-wider">Step 3: Luxury Customizations</h4>
+                
+                <div class="space-y-2.5">
+                    <label class="cursor-pointer flex items-center justify-between p-3 rounded-xl glass-card border border-slate-700 hover:border-slate-600">
+                        <span class="flex items-center gap-2 text-xs text-white font-medium">
+                            <input type="checkbox" id="bw-addon-varnish" value="varnish" data-price-inr="5000" data-price-usd="65" class="w-4 h-4 accent-gold-500" onchange="updateWizardSummary()">
+                            Studio UV Museum Varnish & Fine Detailing
+                        </span>
+                        <span class="text-xs text-gold-400 font-bold bw-addon-text">+₹5,000 / $65</span>
+                    </label>
+
+                    <label class="cursor-pointer flex items-center justify-between p-3 rounded-xl glass-card border border-slate-700 hover:border-slate-600">
+                        <span class="flex items-center gap-2 text-xs text-white font-medium">
+                            <input type="checkbox" id="bw-addon-goldleaf" value="goldleaf" data-price-inr="4000" data-price-usd="55" class="w-4 h-4 accent-gold-500" onchange="updateWizardSummary()">
+                            24K Pure Gold Leaf Embellishments
+                        </span>
+                        <span class="text-xs text-gold-400 font-bold bw-addon-text">+₹4,000 / $55</span>
+                    </label>
+
+                    <label class="cursor-pointer flex items-center justify-between p-3 rounded-xl glass-card border border-slate-700 hover:border-slate-600">
+                        <span class="flex items-center gap-2 text-xs text-white font-medium">
+                            <input type="checkbox" id="bw-addon-framing" value="framing" data-price-inr="7500" data-price-usd="100" class="w-4 h-4 accent-gold-500" onchange="updateWizardSummary()">
+                            Custom Handcrafted Teakwood / Gold Framing
+                        </span>
+                        <span class="text-xs text-gold-400 font-bold bw-addon-text">+₹7,500 / $100</span>
+                    </label>
+
+                    <label class="cursor-pointer flex items-center justify-between p-3 rounded-xl glass-card border border-slate-700 hover:border-slate-600">
+                        <span class="flex items-center gap-2 text-xs text-white font-medium">
+                            <input type="checkbox" id="bw-addon-guests" value="guests" data-price-inr="6000" data-price-usd="80" class="w-4 h-4 accent-gold-500" onchange="updateWizardSummary()">
+                            Extra Recognizable Family Portraits (2 Faces)
+                        </span>
+                        <span class="text-xs text-gold-400 font-bold bw-addon-text">+₹6,000 / $80</span>
+                    </label>
+                </div>
+
+                <div class="flex justify-between pt-4">
+                    <button type="button" onclick="goToWizardStep(2)" class="px-5 py-2.5 rounded-full glass-card text-slate-300 text-xs font-semibold">
+                        &larr; Back
+                    </button>
+                    <button type="button" onclick="goToWizardStep(4)" class="px-6 py-3 rounded-full bg-gold-500 hover:bg-gold-400 text-dark-950 font-bold text-xs uppercase tracking-wider">
+                        Next: Review & Instant Book &rarr;
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 4: REVIEW & INSTANT BOOKING -->
+            <div id="wizard-step-4" class="wizard-step hidden space-y-4">
+                <h4 class="text-sm font-bold text-gold-400 uppercase tracking-wider">Step 4: Contact & Confirm Reservation</h4>
+                
+                <form onsubmit="handleWizardFinalBooking(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-1">Your Full Name</label>
+                            <input type="text" id="bw-name" required placeholder="Bride / Groom / Host Name" class="w-full px-3.5 py-2.5 rounded-xl bg-dark-800 border border-slate-700 text-white text-xs focus:border-gold-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-1">WhatsApp / Phone Number</label>
+                            <input type="tel" id="bw-phone" required placeholder="+91 98765 43210" class="w-full px-3.5 py-2.5 rounded-xl bg-dark-800 border border-slate-700 text-white text-xs focus:border-gold-500 focus:outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Email Address</label>
+                        <input type="email" id="bw-email" required placeholder="your@email.com" class="w-full px-3.5 py-2.5 rounded-xl bg-dark-800 border border-slate-700 text-white text-xs focus:border-gold-500 focus:outline-none">
+                    </div>
+
+                    <!-- Itemized Summary Box -->
+                    <div class="p-4 rounded-2xl bg-dark-900 border border-gold-500/30 space-y-2">
+                        <div class="flex justify-between text-xs text-slate-300">
+                            <span>Selected Package:</span>
+                            <strong id="bw-summary-package" class="text-white">24" x 36" Canvas</strong>
+                        </div>
+                        <div class="flex justify-between text-xs text-slate-300">
+                            <span>Key Moment:</span>
+                            <strong id="bw-summary-moment" class="text-white">Varmala Garland Exchange</strong>
+                        </div>
+                        <div class="flex justify-between text-xs text-slate-300">
+                            <span>Date & Location:</span>
+                            <strong id="bw-summary-location" class="text-white">Pending Details</strong>
+                        </div>
+                        <div class="border-t border-slate-800 pt-2 flex justify-between text-sm">
+                            <span class="font-bold text-white">Estimated Total:</span>
+                            <strong id="bw-summary-total" class="font-serif text-lg gold-gradient-text">₹45,000</strong>
+                        </div>
+                        <div class="flex justify-between text-xs text-gold-400 font-semibold bg-gold-500/10 p-2 rounded-lg">
+                            <span>30% Advance Deposit Required to Lock Date:</span>
+                            <span id="bw-summary-deposit">₹13,500</span>
+                        </div>
+                    </div>
+
+                    <!-- Booking Action Buttons: WhatsApp & Direct Reservation -->
+                    <div class="space-y-2 pt-2">
+                        <button type="button" onclick="bookViaWhatsApp()" class="w-full py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Lock Date via WhatsApp with Harshita
+                        </button>
+                        <button type="submit" class="w-full py-3.5 rounded-full bg-gradient-to-r from-gold-500 to-amber-600 text-dark-950 font-extrabold text-xs uppercase tracking-wider gold-glow hover:from-gold-400 hover:to-amber-500 transition-all">
+                            Submit Official Date Reservation Request
+                        </button>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <button type="button" onclick="goToWizardStep(3)" class="text-xs text-slate-400 hover:text-white underline">
+                            &larr; Modify Add-ons
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- GALLERY INSPECTION MODAL -->
+    <div id="gallery-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-dark-950/85 backdrop-blur-md">
+        <div class="relative max-w-3xl w-full glass-panel rounded-3xl overflow-hidden border border-gold-500/30 p-6">
+            <button onclick="closeGalleryModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-dark-800 text-slate-300 hover:text-white flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <img id="modal-img" src="" class="w-full h-72 object-cover rounded-xl border border-slate-700 shadow-xl">
+                <div class="space-y-3">
+                    <span id="modal-category" class="text-xs text-gold-400 font-bold uppercase"></span>
+                    <h3 id="modal-title" class="font-serif text-2xl font-bold text-white"></h3>
+                    <p id="modal-size" class="text-xs text-slate-300"></p>
+                    <p id="modal-time" class="text-xs text-slate-400"></p>
+                    <p id="modal-client" class="text-xs text-slate-400 italic mt-2"></p>
+                    
+                    <div class="pt-2">
+                        <button onclick="closeGalleryModal(); openBookingWizard();" class="px-6 py-2.5 rounded-full bg-gradient-to-r from-gold-500 to-amber-600 text-dark-950 font-bold text-xs uppercase tracking-wider">
+                            Book Similar Live Painting
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIDEO LIGHTBOX MODAL -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-dark-950/90 backdrop-blur-md">
+        <div class="relative max-w-3xl w-full glass-panel rounded-3xl overflow-hidden border border-gold-500/40 p-6">
+            <button onclick="closeVideoModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-dark-800 text-slate-300 hover:text-white flex items-center justify-center z-10">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="space-y-4">
+                <div class="aspect-video w-full rounded-2xl overflow-hidden bg-black relative border border-slate-800 shadow-2xl flex items-center justify-center">
+                    <img id="video-modal-poster" src="" class="w-full h-full object-cover">
+                    <!-- Animated Canvas Video Player Simulation -->
+                    <div class="absolute inset-0 bg-dark-950/30 flex flex-col items-center justify-center text-center p-6 space-y-3">
+                        <div class="w-16 h-16 rounded-full bg-gold-500 text-dark-950 flex items-center justify-center text-2xl shadow-xl gold-glow animate-pulse">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </div>
+                        <span class="text-xs font-bold text-white px-3 py-1 rounded-full glass-panel">HD Live Timelapse Video &bull; Painted by Harshita</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 id="video-modal-title" class="font-serif text-2xl font-bold text-white"></h3>
+                    <p id="video-modal-desc" class="text-xs text-slate-300 mt-1"></p>
+                </div>
+
+                <div class="pt-3 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800">
+                    <a href="https://www.instagram.com/livepaintingsbyharshita/" target="_blank" class="text-xs text-gold-400 font-bold hover:underline flex items-center gap-1.5">
+                        <i class="fa-brands fa-instagram"></i> View more on @livepaintingsbyharshita
+                    </a>
+                    <button onclick="closeVideoModal(); openBookingWizard();" class="px-6 py-2.5 rounded-full bg-gold-500 text-dark-950 font-bold text-xs uppercase tracking-wider">
+                        Book Harshita for this Experience &rarr;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOOKING SUCCESS MODAL -->
+    <div id="success-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-dark-950/90 backdrop-blur-md">
+        <div class="max-w-md w-full glass-panel rounded-3xl p-8 text-center border border-gold-500/40 shadow-2xl gold-glow">
+            <div class="w-16 h-16 rounded-full bg-gold-500/20 border border-gold-500 text-gold-400 flex items-center justify-center text-3xl mx-auto mb-4">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-2">Reservation Request Sent!</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Thank you! We have received your live wedding painting inquiry. Harshita will personally review the date schedule and contact you via WhatsApp / Phone within 12-24 hours.
+            </p>
+            <div class="p-3 rounded-xl bg-dark-900 border border-slate-800 text-xs text-slate-300 mb-6 text-left space-y-1">
+                <div class="flex justify-between">
+                    <span>Reference ID:</span>
+                    <strong id="success-ref-code" class="text-gold-400 font-mono">#HARSHITA-2026-8942</strong>
+                </div>
+                <div class="flex justify-between">
+                    <span>Next Step:</span>
+                    <span class="text-white">30% Deposit to Lock Date</span>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <button onclick="downloadCalendarInvite()" class="w-full py-2.5 rounded-full glass-card text-gold-400 text-xs font-bold border border-gold-500/30">
+                    <i class="fa-solid fa-calendar-plus mr-1.5"></i> Add to Calendar (.ics)
+                </button>
+                <button onclick="closeSuccessModal()" class="w-full py-3 rounded-full bg-gold-500 text-dark-950 font-bold text-xs uppercase tracking-wider">
+                      <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/919963473879?text=Hello%20Harshita!%20I%20am%20interested%20in%20booking%20a%20Live%20Painting%20for%20my%20event." target="_blank" rel="noopener" class="fixed bottom-6 left-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-all" title="Chat on WhatsApp (+91 99634 73879)">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- FLOATING QUICK BOOK BUTTON -->
+    <button onclick="openBookingWizard()" class="fixed bottom-6 right-20 z-40 hidden sm:flex items-center gap-2 px-5 py-3.5 rounded-full bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-dark-950 font-extrabold text-xs uppercase tracking-wider shadow-2xl gold-glow hover:scale-105 transition-all">
+        <i class="fa-solid fa-calendar-check text-sm"></i> Book Date
+    </button>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-950 border-t border-slate-800/80 text-slate-400 py-12 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-gold-500 flex items-center justify-center text-dark-950 font-serif font-bold text-sm">H</div>
+                        <span class="font-serif text-lg font-bold text-white">Live Paintings by <span class="gold-gradient-text">Harshita</span></span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Luxury live wedding & celebration fine art. Preserving precious milestones into timeless heirlooms across India and worldwide.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-white text-sm mb-3">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><button onclick="switchPage('home')" class="hover:text-gold-400">Home</button></li>
+                        <li><button onclick="switchPage('about')" class="hover:text-gold-400">About Harshita</button></li>
+                        <li><button onclick="switchPage('gallery')" class="hover:text-gold-400">Live Paintings Gallery</button></li>
+                        <li><button onclick="switchPage('videos')" class="hover:text-gold-400">Videos & Reels</button></li>
+                        <li><button onclick="switchPage('estimator')" class="hover:text-gold-400">Price Estimator</button></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-white text-sm mb-3">Signature Offerings</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li>Varmala & Wedding Ceremony</li>
+                        <li>Engagement & Roka Ceremonies</li>
+                        <li>Haldi Magic & Sangeet Art</li>
+                        <li>24K Pure Gold Leaf Accents</li>
+                        <li>Live Guest Watercolor Sketches</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-white text-sm mb-3">Direct Connect</h4>
+                    <p class="text-slate-400 mb-2"><i class="fa-brands fa-whatsapp text-emerald-400 mr-2 text-sm"></i> WhatsApp: +91 99634 73879</p>
+                    <p class="text-slate-400 mb-2"><i class="fa-brands fa-instagram text-gold-400 mr-2"></i> @livepaintingsbyharshita</p>
+                    <p class="text-slate-400 mb-4"><i class="fa-solid fa-envelope text-gold-400 mr-2"></i> bookings@livepaintingsbyharshita.com</p>
+                    <button onclick="openBookingWizard()" class="px-5 py-2.5 rounded-full bg-gold-500 text-dark-950 font-bold text-xs uppercase tracking-wider">
+                        Book Your Event
+                    </button>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px]">
+                <p>&copy; 2026 Live Paintings by Harshita. All rights reserved.</p>
+                <p>Designed for Luxury Weddings & Celebrations.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // State
+        const HARSHITA_WHATSAPP = '919963473879';
+        let currentCurrency = 'INR'; // 'INR' or 'USD'
+        let currentEventTypeMultiplier = 1.0;
+        let travelKm = 0;
+        let lastConfirmedBooking = null;
+
+        const pageIds = ['home', 'about', 'gallery', 'videos', 'process', 'estimator', 'reviews', 'faq'];
+        const BOOKINGS_STORAGE_KEY = 'harshita_bookings';
+
+        function getStoredBookings() {
+            try {
+                const data = JSON.parse(localStorage.getItem(BOOKINGS_STORAGE_KEY) || '[]');
+                return Array.isArray(data) ? data : [];
+            } catch (error) {
+                return [];
+            }
+        }
+
+        async function saveBookingToStorage(data) {
+            const bookings = getStoredBookings();
+            const entry = {
+                ...data,
+                status: 'Confirmed',
+                savedAt: new Date().toISOString()
+            };
+            bookings.unshift(entry);
+            localStorage.setItem(BOOKINGS_STORAGE_KEY, JSON.stringify(bookings.slice(0, 100)));
+            localStorage.setItem('harshita_latest_booking', JSON.stringify(data));
+
+            try {
+                const response = await fetch('http://127.0.0.1:8001/api/bookings', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    console.warn('Booking saved locally, but backend rejected it:', await response.text());
+                }
+            } catch (error) {
+                console.warn('Backend booking sync failed; local booking data was still saved.', error);
+            }
+        }
+
+        function switchPage(pageId, updateUrl = true) {
+            if (!pageIds.includes(pageId)) {
+                pageId = 'home';
+            }
+
+            document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+            const target = document.getElementById(`page-${pageId}`);
+            if (target) {
+                target.classList.add('active');
+            }
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.dataset.page === pageId) {
+                    link.classList.add('text-gold-400', 'border-gold-500');
+                    link.classList.remove('text-slate-300', 'border-transparent');
+                } else {
+                    link.classList.remove('text-gold-400', 'border-gold-500');
+                    link.classList.add('text-slate-300', 'border-transparent');
+                }
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if (updateUrl && window.location.hash !== `#${pageId}`) {
+                history.replaceState(null, '', `#${pageId}`);
+            }
+        }
+
+        // Currency Toggle
+        function toggleCurrency() {
+            currentCurrency = currentCurrency === 'INR' ? 'USD' : 'INR';
+            document.getElementById('currency-label').textContent = currentCurrency === 'INR' ? 'INR (₹)' : 'USD ($)';
+            updateCurrencyDisplays();
+            calculateLiveQuote();
+            updateWizardSummary();
+        }
+
+        function updateCurrencyDisplays() {
+            const isINR = currentCurrency === 'INR';
+            const prefix = isINR ? '₹' : '$';
+            
+            document.querySelectorAll('#canvas-size-grid label').forEach(label => {
+                const input = label.querySelector('input');
+                const textElem = label.querySelector('.canvas-price-text');
+                if (input && textElem) {
+                    const price = isINR ? parseInt(input.dataset.baseInr) : parseInt(input.dataset.baseUsd);
+                    textElem.textContent = `${prefix}${price.toLocaleString()}`;
+                }
+            });
+
+            document.querySelectorAll('#estimator-form input[name="addon"]').forEach(cb => {
+                const label = cb.closest('label');
+                const priceElem = label.querySelector('.addon-price-text');
+                if (priceElem) {
+                    const price = isINR ? parseInt(cb.dataset.priceInr) : parseInt(cb.dataset.priceUsd);
+                    priceElem.textContent = `+${prefix}${price.toLocaleString()}`;
+                }
+            });
+
+            document.querySelectorAll('#wizard-step-2 label').forEach(label => {
+                const input = label.querySelector('input');
+                const priceElem = label.querySelector('.bw-canvas-price');
+                if (input && priceElem) {
+                    const inr = parseInt(input.dataset.priceInr).toLocaleString();
+                    const usd = parseInt(input.dataset.priceUsd).toLocaleString();
+                    priceElem.textContent = `₹${inr} / $${usd}`;
+                }
+            });
+        }
+
+        // Mobile Menu
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        function closeMobileMenu() { mobileMenu.classList.add('hidden'); }
+
+        // ESTIMATOR LOGIC
+        function setEventType(type, multiplier, btnElement) {
+            currentEventTypeMultiplier = multiplier;
+            document.querySelectorAll('.event-type-btn').forEach(b => {
+                b.classList.remove('border-gold-500', 'bg-gold-500/10');
+                b.classList.add('border-slate-700');
+            });
+            btnElement.classList.add('border-gold-500', 'bg-gold-500/10');
+            btnElement.classList.remove('border-slate-700');
+            calculateLiveQuote();
+        }
+
+        function updateTravelKm(val) {
+            travelKm = parseInt(val);
+            document.getElementById('travel-km-text').textContent = `${travelKm} km (${travelKm <= 50 ? 'Local Venue' : 'Outstation'})`;
+            calculateLiveQuote();
+        }
+
+        function calculateLiveQuote() {
+            const isINR = currentCurrency === 'INR';
+            const prefix = isINR ? '₹' : '$';
+
+            const selectedCanvas = document.querySelector('input[name="canvasSize"]:checked');
+            let basePrice = 45000;
+            if (selectedCanvas) {
+                basePrice = isINR ? parseInt(selectedCanvas.dataset.baseInr) : parseInt(selectedCanvas.dataset.baseUsd);
+            }
+
+            let addonsTotal = 0;
+            document.querySelectorAll('input[name="addon"]:checked').forEach(cb => {
+                addonsTotal += isINR ? parseInt(cb.dataset.priceInr) : parseInt(cb.dataset.priceUsd);
+            });
+
+            let travelFee = 0;
+            if (travelKm > 50) {
+                travelFee = isINR ? (travelKm - 50) * 30 : (travelKm - 50) * 0.4;
+            }
+
+            let total = Math.round((basePrice * currentEventTypeMultiplier) + addonsTotal + travelFee);
+            let deposit = Math.round(total * 0.3);
+
+            const totalElem = document.getElementById('calculated-total');
+            const breakdownElem = document.getElementById('calculation-breakdown-text');
+            const depositElem = document.getElementById('deposit-amount-preview');
+
+            if (totalElem) totalElem.textContent = `${prefix}${total.toLocaleString()}`;
+            if (breakdownElem) {
+                breakdownElem.textContent = `Base: ${prefix}${basePrice.toLocaleString()} | Add-ons: ${prefix}${addonsTotal.toLocaleString()} | Travel: ${prefix}${Math.round(travelFee).toLocaleString()}`;
+            }
+            if (depositElem) depositElem.textContent = `${prefix}${deposit.toLocaleString()}`;
+
+            return { total, deposit, basePrice, addonsTotal, travelFee };
+        }
+
+        // GALLERY LOGIC
+        function filterGallery(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.remove('bg-gold-500', 'text-dark-950');
+                b.classList.add('glass-card', 'text-slate-300');
+            });
+            btn.classList.remove('glass-card', 'text-slate-300');
+            btn.classList.add('bg-gold-500', 'text-dark-950');
+
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function openGalleryModal(title, category, size, time, img, client) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-category').textContent = category;
+            document.getElementById('modal-size').textContent = `Dimensions: ${size}`;
+            document.getElementById('modal-time').textContent = `Performance: ${time}`;
+            document.getElementById('modal-img').src = img;
+            document.getElementById('modal-client').textContent = `Client / Venue: ${client}`;
+            document.getElementById('gallery-modal').classList.remove('hidden');
+        }
+
+        function closeGalleryModal() {
+            document.getElementById('gallery-modal').classList.add('hidden');
+        }
+
+        function toggleTouchup(stage) {
+            const img = document.getElementById('touchup-img');
+            const badge = document.getElementById('touchup-badge');
+            const btnLive = document.getElementById('btn-touchup-live');
+            const btnFinal = document.getElementById('btn-touchup-final');
+
+            if (stage === 'final') {
+                img.src = 'assets/images/hero_harshita_live.jpg';
+                badge.textContent = '2. Studio Polished & UV Varnished (100% Cured)';
+                btnFinal.className = 'px-5 py-2.5 rounded-lg bg-gold-500 text-dark-950 text-xs font-bold transition-all';
+                btnLive.className = 'px-5 py-2.5 rounded-lg glass-card text-slate-300 hover:text-gold-400 text-xs font-bold border border-slate-700 transition-all';
+            } else {
+                img.src = 'assets/images/wedding_ceremony_painting.jpg';
+                badge.textContent = '1. Live Event Stage (85-90% Done Live)';
+                btnLive.className = 'px-5 py-2.5 rounded-lg bg-gold-500 text-dark-950 text-xs font-bold transition-all';
+                btnFinal.className = 'px-5 py-2.5 rounded-lg glass-card text-slate-300 hover:text-gold-400 text-xs font-bold border border-slate-700 transition-all';
+            }
+        }
+
+        // VIDEO SHOWCASE LOGIC
+        function filterVideos(category, btn) {
+            document.querySelectorAll('.video-filter-btn').forEach(b => {
+                b.classList.remove('bg-gold-500', 'text-dark-950');
+                b.classList.add('glass-card', 'text-slate-300');
+            });
+            btn.classList.remove('glass-card', 'text-slate-300');
+            btn.classList.add('bg-gold-500', 'text-dark-950');
+
+            document.querySelectorAll('.video-card').forEach(item => {
+                if (category === 'all' || item.dataset.videoCategory === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function openVideoModal(title, desc, poster, duration, venue) {
+            document.getElementById('video-modal-title').textContent = title;
+            document.getElementById('video-modal-desc').textContent = `${desc} (Location: ${venue} &bull; Duration: ${duration})`;
+            document.getElementById('video-modal-poster').src = poster;
+            document.getElementById('video-modal').classList.remove('hidden');
+        }
+
+        function closeVideoModal() {
+            document.getElementById('video-modal').classList.add('hidden');
+        }
+
+        // 4-STEP BOOKING WIZARD LOGIC
+        let wizardCurrentStep = 1;
+
+        function openBookingWizard() {
+            document.getElementById('booking-wizard-modal').classList.remove('hidden');
+            goToWizardStep(1);
+            updateWizardSummary();
+        }
+
+        function closeBookingWizard() {
+            document.getElementById('booking-wizard-modal').classList.add('hidden');
+        }
+
+        function goToWizardStep(step) {
+            wizardCurrentStep = step;
+            for (let i = 1; i <= 4; i++) {
+                const stepElem = document.getElementById(`wizard-step-${i}`);
+                const tabElem = document.getElementById(`step-tab-${i}`);
+                const labelElem = document.getElementById(`step-label-${i}`);
+
+                if (i === step) {
+                    stepElem.classList.remove('hidden');
+                    tabElem.className = 'h-1.5 rounded-full bg-gold-500 transition-all';
+                    labelElem.className = 'text-gold-400 font-bold';
+                } else if (i < step) {
+                    stepElem.classList.add('hidden');
+                    tabElem.className = 'h-1.5 rounded-full bg-emerald-500 transition-all';
+                    labelElem.className = 'text-emerald-400 font-semibold';
+                } else {
+                    stepElem.classList.add('hidden');
+                    tabElem.className = 'h-1.5 rounded-full bg-slate-800 transition-all';
+                    labelElem.className = 'text-slate-500';
+                }
+            }
+            updateWizardSummary();
+        }
+
+        function checkDateAvailability(dateVal) {
+            const badge = document.getElementById('date-avail-badge');
+            if (dateVal) {
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        function getBookingData() {
+            const selectedCanvas = document.querySelector('input[name="bw-canvas"]:checked');
+            let canvasName = selectedCanvas ? selectedCanvas.value : '24x36';
+            let inrPrice = selectedCanvas ? parseInt(selectedCanvas.dataset.priceInr) : 45000;
+            let usdPrice = selectedCanvas ? parseInt(selectedCanvas.dataset.priceUsd) : 600;
+
+            const addonsList = [];
+            let addonsInr = 0;
+            let addonsUsd = 0;
+            if (document.getElementById('bw-addon-varnish')?.checked) { 
+                addonsInr += 5000; addonsUsd += 65; 
+                addonsList.push('Studio UV Varnish & Fine Detailing (+₹5,000)'); 
+            }
+            if (document.getElementById('bw-addon-goldleaf')?.checked) { 
+                addonsInr += 4000; addonsUsd += 55; 
+                addonsList.push('24K Genuine Gold Leaf Highlights (+₹4,000)'); 
+            }
+            if (document.getElementById('bw-addon-framing')?.checked) { 
+                addonsInr += 7500; addonsUsd += 100; 
+                addonsList.push('Custom Handcrafted Teakwood Framing (+₹7,500)'); 
+            }
+            if (document.getElementById('bw-addon-guests')?.checked) { 
+                addonsInr += 6000; addonsUsd += 80; 
+                addonsList.push('Extra Family Portraits 2 Faces (+₹6,000)'); 
+            }
+
+            const isINR = currentCurrency === 'INR';
+            let total = isINR ? (inrPrice + addonsInr) : (usdPrice + addonsUsd);
+            let deposit = Math.round(total * 0.3);
+            let balance = total - deposit;
+            let prefix = isINR ? '₹' : '$';
+
+            const name = document.getElementById('bw-name')?.value || 'Guest';
+            const phone = document.getElementById('bw-phone')?.value || 'Pending';
+            const email = document.getElementById('bw-email')?.value || 'Pending';
+            const eventType = document.getElementById('bw-event-type')?.value || 'wedding';
+            const moment = document.getElementById('bw-moment')?.value || 'Varmala Garland Exchange';
+            const city = document.getElementById('bw-city')?.value || 'Venue City';
+            const venue = document.getElementById('bw-venue')?.value || 'Venue';
+            const date = document.getElementById('bw-date')?.value || new Date().toISOString().split('T')[0];
+
+            return {
+                name, phone, email, eventType, moment, city, venue, date,
+                canvasName, inrPrice, usdPrice, addonsList, addonsInr, addonsUsd,
+                total, deposit, balance, prefix, isINR,
+                timestamp: new Date().toLocaleString()
+            };
+        }
+
+        function updateWizardSummary() {
+            const data = getBookingData();
+            const summaryPkg = document.getElementById('bw-summary-package');
+            const summaryMoment = document.getElementById('bw-summary-moment');
+            const summaryLoc = document.getElementById('bw-summary-location');
+            const summaryTotal = document.getElementById('bw-summary-total');
+            const summaryDeposit = document.getElementById('bw-summary-deposit');
+
+            if (summaryPkg) summaryPkg.textContent = `${data.canvasName}" Fine Art Canvas`;
+            if (summaryMoment) summaryMoment.textContent = data.moment;
+            if (summaryLoc) summaryLoc.textContent = `${data.date} &bull; ${data.city}`;
+            if (summaryTotal) summaryTotal.textContent = `${data.prefix}${data.total.toLocaleString()}`;
+            if (summaryDeposit) summaryDeposit.textContent = `${data.prefix}${data.deposit.toLocaleString()}`;
+        }
+
+        function transferEstimateToBooking() {
+            openBookingWizard();
+            goToWizardStep(2);
+        }
+
+        function createWhatsAppBookingMessage(data, refCode) {
+            const addonsText = data.addonsList.length > 0 ? data.addonsList.join(', ') : 'None';
+            return encodeURIComponent(
+                `🎨 *LIVE WEDDING PAINTING RESERVATION REQUEST*\n\n` +
+                `✨ *Artist:* Harshita (@livepaintingsbyharshita)\n` +
+                `🔖 *Reference ID:* ${refCode}\n\n` +
+                `👤 *Booked For:* ${data.name}\n` +
+                `📞 *WhatsApp/Phone:* ${data.phone}\n` +
+                `✉️ *Email:* ${data.email}\n\n` +
+                `📅 *Event Date:* ${data.date}\n` +
+                `🎉 *Event Type:* ${data.eventType.toUpperCase()}\n` +
+                `📍 *Venue & City:* ${data.venue}, ${data.city}\n` +
+                `🖼️ *Canvas Size:* ${data.canvasName}" Fine Art Canvas\n` +
+                `💍 *Key Moment to Paint:* ${data.moment}\n` +
+                `✨ *Luxury Add-ons:* ${addonsText}\n\n` +
+                `💵 *Estimated Investment:* ${data.prefix}${data.total.toLocaleString()}\n` +
+                `🔒 *30% Advance Deposit to Lock Date:* ${data.prefix}${data.deposit.toLocaleString()}\n` +
+                `💳 *Remaining Balance (7 days prior):* ${data.prefix}${data.balance.toLocaleString()}\n\n` +
+                `Please confirm Harshita's availability and send the advance payment details. Thank you!`
+            );
+        }
+
+        function bookViaWhatsApp() {
+            const data = getBookingData();
+            const refCode = '#HARSHITA-' + Math.floor(100000 + Math.random() * 900000);
+            data.refCode = refCode;
+            lastConfirmedBooking = data;
+            saveBookingToStorage(data);
+
+            const msg = createWhatsAppBookingMessage(data, refCode);
+            window.open(`https://wa.me/${HARSHITA_WHATSAPP}?text=${msg}`, '_blank');
+            displayOrderConfirmation(data, refCode);
+        }
+
+        async function handleWizardFinalBooking(e) {
+            e.preventDefault();
+            closeBookingWizard();
+            const data = getBookingData();
+            const refCode = '#HARSHITA-' + Math.floor(100000 + Math.random() * 900000);
+            data.refCode = refCode;
+            lastConfirmedBooking = data;
+            await saveBookingToStorage(data);
+            displayOrderConfirmation(data, refCode);
+        }
+
+        function displayOrderConfirmation(data, refCode) {
+            closeBookingWizard();
+            document.getElementById('success-modal').classList.remove('hidden');
+
+            // Render full personalized order confirmation receipt
+            const modalContent = document.getElementById('success-modal');
+            modalContent.innerHTML = `
+                <div class="max-w-xl w-full glass-panel rounded-3xl p-6 sm:p-8 text-center border border-gold-500/40 shadow-2xl gold-glow my-6 relative overflow-hidden">
+                    
+                    <button onclick="closeSuccessModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-dark-800 text-slate-300 hover:text-white flex items-center justify-center">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                    <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-400 flex items-center justify-center text-3xl mx-auto mb-3">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[11px] font-bold uppercase tracking-wider border border-emerald-500/40">
+                        Date Reserved & Order Confirmed
+                    </span>
+
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-2 mb-1">
+                        Booking Confirmed for <span class="gold-gradient-text">${data.name}</span>!
+                    </h3>
+                    <p class="text-xs text-slate-400 mb-5">
+                        Your live painting reservation request has been submitted directly to Harshita.
+                    </p>
+
+                    <!-- Official Receipt Box -->
+                    <div id="printable-receipt" class="p-5 rounded-2xl bg-dark-900 border border-gold-500/30 text-left text-xs space-y-3 shadow-inner">
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-2.5">
+                            <div>
+                                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Booking Reference</span>
+                                <strong class="text-gold-400 font-mono text-sm">${refCode}</strong>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Booking Time</span>
+                                <span class="text-white text-[11px] font-medium">${data.timestamp}</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <div>
+                                <span class="text-[10px] text-slate-400 block">Client Name</span>
+                                <strong class="text-white">${data.name}</strong>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-slate-400 block">Phone / WhatsApp</span>
+                                <strong class="text-white">${data.phone}</strong>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-slate-400 block">Event Date</span>
+                                <strong class="text-white">${data.date}</strong>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-slate-400 block">Venue & City</span>
+                                <strong class="text-white">${data.venue}, ${data.city}</strong>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-slate-800 pt-2 space-y-1 text-xs">
+                            <div class="flex justify-between text-slate-300">
+                                <span>Canvas Size:</span>
+                                <strong class="text-white">${data.canvasName}" Fine Art Canvas</strong>
+                            </div>
+                            <div class="flex justify-between text-slate-300">
+                                <span>Key Moment to Paint:</span>
+                                <strong class="text-white">${data.moment}</strong>
+                            </div>
+                            <div class="flex justify-between text-slate-300">
+                                <span>Add-ons:</span>
+                                <span class="text-gold-400 text-right">${data.addonsList.length ? data.addonsList.join(', ') : 'None'}</span>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-slate-800 pt-2.5 space-y-1">
+                            <div class="flex justify-between text-sm font-bold">
+                                <span class="text-white">Total Investment:</span>
+                                <span class="gold-gradient-text">${data.prefix}${data.total.toLocaleString()}</span>
+                            </div>
+                            <div class="flex justify-between text-xs bg-gold-500/10 p-2 rounded-lg text-gold-300 font-semibold">
+                                <span>30% Advance Deposit Required:</span>
+                                <span>${data.prefix}${data.deposit.toLocaleString()}</span>
+                            </div>
+                            <div class="flex justify-between text-[11px] text-slate-400">
+                                <span>Remaining Balance (Due 7 days prior):</span>
+                                <span>${data.prefix}${data.balance.toLocaleString()}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="space-y-2 mt-5">
+                        <button onclick="sendOrderToWhatsApp()" class="w-full py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Send Receipt to Harshita on WhatsApp (+91 99634 73879)
+                        </button>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="window.print()" class="py-2.5 rounded-full glass-card text-slate-300 hover:text-white text-xs font-bold border border-slate-700">
+                                <i class="fa-solid fa-print mr-1"></i> Print Receipt
+                            </button>
+                            <button onclick="downloadCalendarInvite()" class="py-2.5 rounded-full glass-card text-gold-400 text-xs font-bold border border-gold-500/30">
+                                <i class="fa-solid fa-calendar-plus mr-1"></i> Calendar (.ics)
+                            </button>
+                        </div>
+                        <button onclick="closeSuccessModal()" class="w-full py-2.5 rounded-full bg-dark-800 text-slate-300 hover:text-white text-xs font-semibold">
+                            Back to Website
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function sendOrderToWhatsApp() {
+            if (!lastConfirmedBooking) {
+                const stored = localStorage.getItem('harshita_latest_booking');
+                if (stored) lastConfirmedBooking = JSON.parse(stored);
+            }
+            if (lastConfirmedBooking) {
+                const msg = createWhatsAppBookingMessage(lastConfirmedBooking, lastConfirmedBooking.refCode);
+                window.open(`https://wa.me/${HARSHITA_WHATSAPP}?text=${msg}`, '_blank');
+            }
+        }
+
+        function handleDirectContact(e) {
+            e.preventDefault();
+            const refCode = '#HARSHITA-' + Math.floor(100000 + Math.random() * 900000);
+            const data = {
+                name: 'Direct Contact Inquiry',
+                phone: 'Provided in form',
+                email: 'Provided in form',
+                eventType: 'Direct Message',
+                moment: 'Custom Discussion',
+                city: 'Venue City',
+                venue: 'Venue',
+                date: 'As Requested',
+                canvasName: '24x36',
+                addonsList: [],
+                total: 45000,
+                deposit: 13500,
+                balance: 31500,
+                prefix: '₹',
+                timestamp: new Date().toLocaleString()
+            };
+            displayOrderConfirmation(data, refCode);
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        function downloadCalendarInvite() {
+            const dateStr = lastConfirmedBooking?.date || document.getElementById('bw-date')?.value || '2026-11-20';
+            const cleanDate = dateStr.replace(/-/g, '');
+            const clientName = lastConfirmedBooking?.name || 'Your Wedding';
+            const icsContent = 
+                `BEGIN:VCALENDAR\n` +
+                `VERSION:2.0\n` +
+                `BEGIN:VEVENT\n` +
+                `SUMMARY:Live Painting by Harshita (${clientName})\n` +
+                `DESCRIPTION:Live Wedding Painting by Harshita (@livepaintingsbyharshita, WhatsApp: +91 99634 73879)\n` +
+                `DTSTART:${cleanDate}T160000Z\n` +
+                `DTEND:${cleanDate}T220000Z\n` +
+                `END:VEVENT\n` +
+                `END:VCALENDAR`;
+
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.setAttribute('download', 'live_painting_harshita.ics');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            answer.classList.toggle('hidden');
+            btn.querySelector('i').classList.toggle('rotate-180');
+        }
+
+        window.addEventListener('hashchange', () => {
+            switchPage(window.location.hash.slice(1) || 'home', false);
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            switchPage(window.location.hash.slice(1) || 'home', false);
+            updateCurrencyDisplays();
+            calculateLiveQuote();
+        });
+    </script>
+</body>
+<script src="chatbot.js"></script>
+</html>
